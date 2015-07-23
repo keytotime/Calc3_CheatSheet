@@ -14,9 +14,10 @@ Notes on compilation:
 
 I am planning on including a PDF that will get updated every so often when I change the TeX Source.
 To compile the cheat sheet from source, just run it in a TeX parsing engine, I use a mac and TeXShop.
+
 DO NOT MOVE THE SOURCE FILE WITHOUT ALSO MOVING "sheet_images" !!!!
 
-unit_circle isn't required, it's jut included because I used it and it is interesting. It is not my own work, and I did include an Originally Retrieved from note at the top.
+unit\_circle isn't required, it's just included because I used it and it is interesting. It is not my own work, and I did include an Originally Retrieved from note at the top of unit\_circle.tex.
 
 Notes on Updating:
 
