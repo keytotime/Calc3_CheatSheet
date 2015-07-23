@@ -1,0 +1,367 @@
+\documentclass[10pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{color,graphicx,overpic}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\graphicspath{ {sheet_images/} }
+
+%Originally Modified by Daniel Kenner for Calc 3 Cheat Sheet
+%Template Originally found @ http://tex.stackexchange.com/questions/8827/preparing-cheat-sheets
+
+\pdfinfo{
+  /Title (Calculus 3 Cheat Sheet.pdf)
+  /Creator (TeX)
+  /Producer (pdfTeX 1.40.0)
+  /Author (Daniel Kenner)
+  /Subject (Example)
+  /Keywords (pdflatex, latex,pdftex,tex)}
+
+% This sets page margins to .5 inch if using letter paper, and to 1cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+    {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+    }
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+%My Environments
+\newtheorem{example}[section]{Example}
+% -----------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+\footnotesize
+\begin{multicols*}{5}
+
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\section{Derivatives}
+\scriptsize
+$D_x e^x=e^x$\newline
+$D_x \sin(x)=\cos(x)$\newline
+$D_x \cos(x)=-\sin(x)$\newline
+$D_x \tan(x)=\sec^2(x)$\newline
+$D_x \cot(x)=-\csc^2(x)$\newline
+$D_x \sec(x)=\sec(x)\tan(x)$\newline
+$D_x \csc(x)=-\csc(x)\cot(x)$\newline
+$D_x \sin^{-1}=\frac{1}{\sqrt{1-x^2}}, x \in [-1,1]$\newline
+$D_x \cos^{-1}=\frac{-1}{\sqrt{1-x^2}}, x \in [-1,1]$\newline
+$D_x \tan^{-1}=\frac{1}{1+x^2}$\newline
+$D_x \sec^{-1}=\frac{1}{\mid x \mid \sqrt{x^2-1}}, |x| > 1$\newline
+$D_x \sinh(x)=\cosh(x)$\newline
+$D_x \cosh(x)=-\sinh(x)$\newline
+$D_x \tanh(x)=sech^2(x)$\newline
+$D_x \coth(x)=-csch^2(x)$\newline
+$D_x sech(x)=-sech(x)\tanh(x)$\newline
+$D_x csch(x)=-csch(x)\coth(x)$\newline
+$D_x \sinh^{-1}=\frac{1}{\sqrt{x^2+1}}$\newline
+$D_x \cosh^{-1}=\frac{-1}{\sqrt{x^2-1}}, x > 1$\newline
+$D_x \tanh^{-1}=\frac{1}{1-x^2} -1 < x < 1$\newline
+$D_x sech^{-1}=\frac{1}{x \sqrt{1-x^2}}, 0 < x < 1$
+
+\section{Integrals}
+\scriptsize
+$\int \frac{1}{x}dx = \ln|x|+c$\newline
+$\int e^x dx = e^x+c $\newline
+$\int a^x dx = \frac{1}{\ln a} a^x+c $\newline
+$\int e^{ax} dx = \frac{1}{a} e^{ax}+c $\newline
+$\int \frac{1}{\sqrt{1-x^2}} dx = \sin^{-1}(x)+c $\newline
+$\int \frac{1}{1+x^2} dx = \tan^{-1}(x)+c $\newline
+$\int \frac{1}{x\sqrt{x^2-1}} dx = \sec^{-1}(x)+c $\newline
+$\int \sinh(x) dx = \cosh(x)+c $\newline
+$\int \cosh(x) dx = \sinh(x)+c $\newline
+$\int \tanh(x) dx = \ln|\cosh(x)|+c $\newline
+$\int \tanh(x)sech(x) dx = -sech(x)+c $\newline
+$\int sech^2(x) dx = \tanh(x)+c $\newline
+$\int csch(x)\coth(x) dx = -csch(x)+c $\newline
+$\int \tan(x) dx = -\ln|\cos(x) |+c $\newline
+$\int \cot(x) dx = \ln|\sin(x)|+c $\newline
+$\int \cos(x) dx = \sin(x)+c $\newline
+$\int \sin(x) dx = -\cos(x)+c $\newline
+$\int \frac{1}{\sqrt{a^2-u^2}} dx = \sin^{-1}(\frac{u}{a})+c $\newline
+$\int \frac{1}{a^2+u^2} dx = \frac{1}{a}\tan^{-1}\frac{u}{a}+c $\newline
+
+\section{Fns and Identities}
+$\sin(\cos^{-1}(x)) = \sqrt{1-x^2}$\newline
+$\cos(\sin^{-1}(x)) = \sqrt{1-x^2} $\newline
+$\sec(\tan^{-1}(x)) = \sqrt{1+x^2} $\newline
+$\tan(\sec^{-1}(x)) \newline = (\sqrt{x^2-1} \: $if$ \: x \ge 1)\newline =(-\sqrt{x^2-1} \: if \: x \le -1)$
+$\sinh^{-1}(x) = \ln{x+\sqrt{x^2+1}} $\newline
+$\sinh^{-1}(x) = \ln{x+\sqrt{x^2-1}}, \: x \ge -1 $\newline
+$\tanh^{-1}(x) = \frac{1}{2}\ln{x+\frac{1+x}{1-x}}, \: 1 < x < -1 $\newline
+$sech^{-1}(x) = \ln[{\frac{1+\sqrt{1-x^2}}{x}}], \: 0 < x \le -1 $\newline
+$\sinh(x) = \frac{e^{x}-e^{-x}}{2} $\newline
+$\cosh(x) = \frac{e^{x}+e^{-x}}{2} $\newline
+
+\section{Trig Identities}
+$ \sin^2(x)+\cos^2(x) = 1 $\newline
+$ 1+\tan^2(x) = \sec^2(x) $\newline
+$ 1+\cot^2(x) = \csc^2(x) $\newline
+$ \sin(x\pm y) = \sin(x)\cos(y)\pm\cos(x)\sin(y) $\newline
+$ \cos(x\pm y) = \cos(x)\cos(y)\pm\sin(x)\sin(y) $\newline
+$ \tan(x\pm y) = \frac{\tan(x)\pm\tan(y)}{1 \mp \tan(x)\tan(y)} $\newline
+$ \sin(2x) = 2\sin(x)\cos(x) $\newline
+$ \cos(2x) = \cos^{2}(x) - \sin^{2}(x) $\newline
+$ \cosh(n^{2}x)-\sinh^{2}x = 1 $\newline
+
+\section {Calculus 3 Concepts}
+
+\subsection{Cartesian coords in 3D}
+given two points:\newline
+$ (x_1, y_1, z_1) $ and $ (x_2, y_2, z_2)$,\newline
+Distance between them:\newline
+$ \sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2} $\newline
+Midpoint:\newline
+$ (\frac{x_1+x_2}{2},\frac{y_1+y_2}{2},\frac{z_1+z_2}{2}) $\newline
+Sphere with center (h,k,l) and radius r:\newline
+$ (x-h)^2 + (y-k)^2 + (z-l)^2 = r^2 $\newline
+
+\subsection{Vectors}
+Vector: $ \vec{u} $\newline
+Unit Vector: $ \hat{u} $\newline
+Magnitude: $ ||\vec{u}|| = \sqrt{u_1^2+u_2^2+u_3^2}$\newline
+Unit Vector: $ \hat{u} = \frac{\vec{u}}{||\vec{u}||} $\newline
+
+\textbf{Dot Product}\newline
+$ \vec{u} \cdot \vec{v} $\newline
+Produces a Scalar \newline
+(Geometrically, the dot product is a vector projection)\newline
+$\vec{u} = < u_1, u_2, u_3 >$\newline
+$\vec{v} = < v_1, v_2, v_3 >$\newline
+$ \vec{u} \cdot \vec{v} = \vec{0} $ means the two vectors are Perpendicular
+$ \theta $ is the angle between them.\newline
+$\vec{u} \cdot \vec{v} = ||\vec{u}||\:||\vec{v}||\cos(\theta) $\newline
+$\vec{u} \cdot \vec{v} = u_1v_1 + u_2v_2 + u_3v_3 $\newline
+NOTE:\newline
+$ \hat{u} \cdot \hat{v} = \cos(\theta) $\newline
+$ ||\vec{u}||^2 = \vec{u} \cdot \vec{u} $\newline
+$ \vec{u} \cdot \vec{v} = 0 $ when $ \bot $\newline
+Angle Between $ \vec{u} $ and $ \vec{v} $:\newline
+$ \theta = \cos^{-1}(\frac{\vec{u} \cdot \vec{v}}{||\vec{u}||\:||\vec{v}||}) $\newline
+Projection of $ \vec{u} $ onto $ \vec{v} $:\newline
+$ pr_{\vec{v}}\vec{u} = \frac{\vec{u} \cdot \vec{v}}{||\vec{u}||^2} $\newline
+
+\textbf{Cross Product}\newline
+$\vec{u} \times \vec{v}$\newline
+Produces a Vector\newline
+(Geometrically, the cross product is the area of a paralellogram with sides $ ||\vec{u}|| $ and $ ||\vec{v}|| $)\newline
+$\vec{u} = < u_1, u_2, u_3 >$\newline
+$\vec{v} = < v_1, v_2, v_3 >$\newline
+
+\[
+\vec{u} \times \vec{v} = 
+\begin{vmatrix}
+\hat{i} & \hat{j} & \hat{k} \\
+u_1 & u_2 & u_3 \\
+v_1 & v_2 & v_3
+\end{vmatrix}
+\]\newline 
+$ \vec{u} \times \vec{v} = \vec{0} $ means the vectors are paralell\newline
+
+\subsection {Equation of a Plane}
+$ (x_0, y_0, z_0) $ is a point on the plane and $ <A,B,C> $ is a normal vector\newline
+
+$A(x-x_0)+B(y-y_0)+C(z-z_0) = 0$\newline
+$ <A,B,C> \cdot <x-x_0, y-y_0, z-z_0> = 0 $\newline
+$ Ax+By+Cz = D $ where $ D=Ax_0+By_0+Cz_0 $\newline
+
+\subsection { Coord Sys Conv }
+Cylindrical to Rectangular\newline
+$ x=r\cos(\theta) $\newline
+$ y=r\sin(\theta) $\newline
+$ z=z $\newline
+Rectangular to Cylindrical\newline
+$ r=\sqrt{x^2+y^2} $\newline
+$ \tan(\theta) = \frac{y}{x} $\newline
+$ z=z $\newline
+Spherical to Rectangular\newline
+$ x=\rho\sin(\phi)\cos(\theta) $\newline
+$ y=\rho\sin(\phi)\sin(\theta) $\newline
+$ z=\rho\cos(\phi) $\newline
+Rectangular to Spherical\newline
+$ \rho=\sqrt{x^2+y^2+z^2} $\newline
+$ \tan(\theta) = \frac{y}{x} $\newline
+$ \cos(\phi) = \frac{z}{\sqrt{x^2+y^2+z^2}} $\newline
+Spherical to Cylindrical\newline
+$ r=\rho\sin(\phi) $\newline
+$ \theta=\theta $\newline
+$ z=\rho\cos(\phi) $\newline
+Cylindrical to Spherical\newline
+$ \rho=\sqrt{r^2+z^2} $\newline
+$ \theta=\theta $\newline
+$ \cos(\phi) = \frac{z}{\sqrt{r^2+z^2}} $\newline
+
+\subsection{Unit Circle}
+\includegraphics[scale=0.25]{unit_circle}
+
+\subsection{Surfaces}
+\textbf{Ellipsoid}\newline
+$ \frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2} = 1 $\newline
+\includegraphics[scale=0.15]{ellipsoid}\newline
+\textbf{Hyperboloid of One Sheet}\newline
+$ \frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2} = 1 $\newline
+(Major Axis: z because it follows - )\newline
+\includegraphics[scale=0.15]{hyperboloid1}\newline
+\textbf{Hyperboloid of Two Sheets}\newline
+$ \frac{z^2}{c^2}-\frac{x^2}{a^2}-\frac{y^2}{b^2} = 1 $\newline
+(Major Axis: Z because it is the one not subtracted)\newline
+\includegraphics[scale=0.15]{hyperboloid2}\newline
+\textbf{Elliptic Paraboloid}\newline
+$ z=\frac{x^2}{a^2}+\frac{y^2}{b^2} $\newline
+(Major Axis: z because it is the variable NOT squared)\newline
+\includegraphics[scale=0.15]{elliptic_paraboloid}\newline
+\textbf{Hyperbolic Paraboloid}\newline
+(Major Axis: Z axis because it is not squared)\newline
+$ z=\frac{y^2}{b^2}-\frac{x^2}{a^2} $\newline
+\includegraphics[scale=0.15]{hyperbolic_paraboloid}\newline
+\textbf{Elliptic Cone}\newline
+(Major Axis: Z axis because it's the only one being subtracted)\newline
+$ \frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2} = 0 $\newline
+\includegraphics[scale=0.15]{elliptic_cone}\newline
+\textbf{Cylinder}\newline
+1 of the variables is missing\newline
+OR\newline
+$ (x-a)^2+(y-b^2) = c $\newline
+(Major Axis is missing variable)
+
+\subsection{Partial Derivatives}
+Partial Derivatives are simply holding all other variables constant (and act like constants for the derivative) and only taking the derivative with respect to a given variable.\newline
+Given z=f(x,y), the partial derivative of z with respect to x is:\newline
+$f_x(x,y) = z_x = \frac{\partial z}{\partial x} = \frac{\partial f(x,y)}{\partial x}$\newline
+likewise for partial with respect to y:\newline
+$f_y(x,y) = z_y = \frac{\partial z}{\partial y} = \frac{\partial f(x,y)}{\partial y}$\newline
+\textbf{Notation}\newline
+For $ f_{xyy} $, work "inside to outside" $ f_{x} $ then $ f_{xy} $, then $ f_{xyy} $\newline
+$f_{xyy} = \frac{\partial^3 f}{\partial x \partial^2 y}, $\newline
+For $\frac{\partial^3 f}{\partial x \partial^2 y}$ , work right to left in the denominator\newline
+
+\subsection {Gradients}
+The Gradient of a function in 2 variables is $ \nabla f = < f_x, f_y > $\newline
+The Gradient of a function in 3 variables is $ \nabla f = < f_x, f_y, f_z > $\newline
+
+\subsection {Chain Rule(s)}
+
+Take the Partial derivative with respect to the first-order variables of the function times the partial (or normal) derivative of the first-order variable to the ultimate variable you are looking for summed with the same process for other first-order variables this makes sens for.
+
+Example:\newline
+
+let x = x(s,t), y = y(t) and z = z(x,y).\newline
+z then has first partial derivative:\newline
+$ \frac{\partial z}{\partial x} $ and $ \frac{\partial z}{\partial y} $ \newline
+x has the partial derivatives:\newline
+$ \frac{\partial x}{\partial s} $ and $ \frac{\partial x}{\partial t} $ \newline
+and y has the derivative:\newline
+$ \frac{dy}{dt} $ \newline
+In this case (with z containing x and y as well as x and y both containing s and t), the chain rule for $ \frac{\partial z}{\partial s} $ is $ \frac{\partial z}{\partial s} = \frac{\partial z}{\partial x} \frac{\partial x}{\partial s} $\newline
+The chain rule for $ \frac{\partial z}{\partial t} $ is $ \frac{\partial z}{\partial t} = \frac{\partial z}{\partial x} \frac{\partial x}{\partial t} + \frac{\partial z}{\partial y} \frac{dy}{dt}$\newline
+Note: the use of "d" instead of $ "\partial" $ with the function of only one independent variable\newline
+
+\subsection{Limits and Continuity}
+\textbf{Limits in 2 or more variables}\newline
+Limits taken over a vectorized limit just evaluate separately for each component of the limit.\newline
+\textbf{Strategies to show limit exists}\newline
+1. Plug in Numbers, Everything is Fine\newline
+2. Algebraic Manipulation\newline
+-factoring/dividing out\newline
+-use trig identites\newline
+3. Change to polar coords\newline
+\:\:$if (x,y)\to(0,0)\Leftrightarrow r\to0$\newline
+\textbf{Strategies to show limit DNE}\newline
+1. Show limit is different if approached from different paths\newline
+(x=y, $x=y^2,$ etc.)\newline
+2. Switch to Polar coords and show the limit DNE.\newline
+\textbf{Continunity}\newline
+A fn, $z=f(x,y)$, is continuous at (a,b) if\newline
+$f(a,b) = \lim_{(x,y) \to (a,b)} f(x,y) $\newline
+Which means:\newline
+1. The limit exists\newline
+2. The fn value is defined\newline
+3. They are the same value
+
+\subsection{Directional Derivatives}
+Let z=f(x,y) be a fuction, (a,b) ap point in the domain (a valid input point) and $ \hat{u} $ a unit vector (2D).\newline
+The Directional Derivative is then the derivative at the point (a,b) in the direction of $ \hat{u} $ or:\newline
+$ D_{\vec{u}}f(a,b) = \hat{u} \cdot \nabla f(a,b)$\newline
+This will return a \textit{scalar}.
+4-D version: $ D_{\vec{u}}f(a,b,c) = \hat{u} \cdot \nabla f(a,b,c) $\newline
+
+\subsection{Tangent Planes}
+let F(x,y,z) = k be a surface and P = $(x_0, y_0, z_0)$ be a point on that surface.\newline
+Equation of a Tangent Plane:\newline
+$ \nabla F(x_0,y_0,z_0) \cdot <x-x_0, y-y_0, z-z_0> $\newline
+
+\subsection {Approximations}
+let $ z=f(x,y) $ be a differentiable function
+total differential of f = dz\newline
+$dz= \nabla f \cdot < dx, dy >$\newline
+This is the \textit{approximate} change in z\newline
+The actual change in z is the difference in z values:\newline
+$ \Delta z = z-z_1 $\newline
+
+\subsection {Maxima and Minima}
+\textbf{Internal Points}\newline
+1. Take the Partial Derivatives with respect to X and Y ($ f_x $ and $ f_y $) (Can use gradient)\newline
+2. Set derivatives equal to 0 and use to solve system of equations for x and y\newline
+3. Plug back into original equation for z.\newline
+Use Second Derivative Test for whether points are local max, min, or saddle\newline
+
+\textbf{Second Partial Derivative Test}\newline
+1. Find all (x,y) points such that $ \nabla f(x,y) = \vec{0} $\newline
+2. Let $ D=f_{xx}(x,y)f_{yy}(x,y)-f_{xy}^2(x,y) $\newline
+IF (a) D $>$ 0 AND $ f_{xx} < 0, $ f(x,y) is local max value\newline
+(b) D $>$ 0 AND $f_{xx}(x,y) > 0$ f(x,y) is local min value\newline
+(c) D $<$ 0, (x,y,f(x,y)) is a saddle point\newline
+(d) D $=$ 0, test is inconclusive\newline
+3. Determine if any boundary point gives min or max. Typically, we have to parametrize boundary and then reduce to a Calc 1 type of min/max problem to solve.
+
+\textbf{The following only apply only if a boundary is given}\newline
+1. check the corner points\newline
+2. Check each line (0 $\le$ x $\le$ 5 would give x=0 and x=5 )\newline
+On Bounded Equations, this is the global min and max...second derivative test is not needed.
+
+\end{multicols*}
+\end{document}
