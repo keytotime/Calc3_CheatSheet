@@ -12,6 +12,7 @@
 
 %Originally Modified by Daniel Kenner for Calc 3 Cheat Sheet
 %Template Originally found @ http://tex.stackexchange.com/questions/8827/preparing-cheat-sheets
+%Conic images originally found on google images when looking for named shapes
 
 \pdfinfo{
   /Title (Calculus 3 Cheat Sheet.pdf)
@@ -102,6 +103,7 @@ $D_x \sinh^{-1}=\frac{1}{\sqrt{x^2+1}}$\newline
 $D_x \cosh^{-1}=\frac{-1}{\sqrt{x^2-1}}, x > 1$\newline
 $D_x \tanh^{-1}=\frac{1}{1-x^2} -1 < x < 1$\newline
 $D_x sech^{-1}=\frac{1}{x \sqrt{1-x^2}}, 0 < x < 1$
+$ D_x \ln(x) = \frac{1}{x} $
 
 \section{Integrals}
 \scriptsize
@@ -125,6 +127,15 @@ $\int \sin(x) dx = -\cos(x)+c $\newline
 $\int \frac{1}{\sqrt{a^2-u^2}} dx = \sin^{-1}(\frac{u}{a})+c $\newline
 $\int \frac{1}{a^2+u^2} dx = \frac{1}{a}\tan^{-1}\frac{u}{a}+c $\newline
 
+\textbf{U-Substitution}\newline
+Let $ u=f(x) $ (can be more than one variable).\newline
+Determine: $ du = \frac{f(x)}{dx}dx $ and solve for dx.\newline
+Then, if a definite integral, substitute the bounds for $ u=f(x) $ at each bounds\newline
+Solve the integral using u.\newline
+
+\textbf{Integration by Parts}\newline
+$ \int u dv = uv-\int v du $
+
 \section{Fns and Identities}
 $\sin(\cos^{-1}(x)) = \sqrt{1-x^2}$\newline
 $\cos(\sin^{-1}(x)) = \sqrt{1-x^2} $\newline
@@ -135,7 +146,7 @@ $\sinh^{-1}(x) = \ln{x+\sqrt{x^2-1}}, \: x \ge -1 $\newline
 $\tanh^{-1}(x) = \frac{1}{2}\ln{x+\frac{1+x}{1-x}}, \: 1 < x < -1 $\newline
 $sech^{-1}(x) = \ln[{\frac{1+\sqrt{1-x^2}}{x}}], \: 0 < x \le -1 $\newline
 $\sinh(x) = \frac{e^{x}-e^{-x}}{2} $\newline
-$\cosh(x) = \frac{e^{x}+e^{-x}}{2} $\newline
+$\cosh(x) = \frac{e^{x}+e^{-x}}{2} $
 
 \section{Trig Identities}
 $ \sin^2(x)+\cos^2(x) = 1 $\newline
@@ -147,6 +158,14 @@ $ \tan(x\pm y) = \frac{\tan(x)\pm\tan(y)}{1 \mp \tan(x)\tan(y)} $\newline
 $ \sin(2x) = 2\sin(x)\cos(x) $\newline
 $ \cos(2x) = \cos^{2}(x) - \sin^{2}(x) $\newline
 $ \cosh(n^{2}x)-\sinh^{2}x = 1 $\newline
+$ 1+\tan^2(x) = \sec^2(x) $\newline
+$ 1+\cot^2(x) = \csc^2(x) $\newline
+$ \sin^2(x) = \frac{1-\cos(2x)}{2} $\newline
+$ \cos^2(x) = \frac{1+\cos(2x)}{2} $\newline
+$ \tan^2(x) = \frac{1-\cos(2x)}{1+\cos(2x)} $\newline
+$ \sin(-x) = -\sin(x) $\newline
+$ \cos(-x) = \cos(x) $\newline
+$ \tan(-x) = -\tan(x) $
 
 \section {Calculus 3 Concepts}
 
@@ -158,7 +177,7 @@ $ \sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2} $\newline
 Midpoint:\newline
 $ (\frac{x_1+x_2}{2},\frac{y_1+y_2}{2},\frac{z_1+z_2}{2}) $\newline
 Sphere with center (h,k,l) and radius r:\newline
-$ (x-h)^2 + (y-k)^2 + (z-l)^2 = r^2 $\newline
+$ (x-h)^2 + (y-k)^2 + (z-l)^2 = r^2 $
 
 \subsection{Vectors}
 Vector: $ \vec{u} $\newline
@@ -191,7 +210,6 @@ Produces a Vector\newline
 (Geometrically, the cross product is the area of a paralellogram with sides $ ||\vec{u}|| $ and $ ||\vec{v}|| $)\newline
 $\vec{u} = < u_1, u_2, u_3 >$\newline
 $\vec{v} = < v_1, v_2, v_3 >$\newline
-
 \[
 \vec{u} \times \vec{v} = 
 \begin{vmatrix}
@@ -200,44 +218,41 @@ u_1 & u_2 & u_3 \\
 v_1 & v_2 & v_3
 \end{vmatrix}
 \]\newline 
-$ \vec{u} \times \vec{v} = \vec{0} $ means the vectors are paralell\newline
+$ \vec{u} \times \vec{v} = \vec{0} $ means the vectors are paralell
 
 \subsection {Equation of a Plane}
 $ (x_0, y_0, z_0) $ is a point on the plane and $ <A,B,C> $ is a normal vector\newline
 
 $A(x-x_0)+B(y-y_0)+C(z-z_0) = 0$\newline
 $ <A,B,C> \cdot <x-x_0, y-y_0, z-z_0> = 0 $\newline
-$ Ax+By+Cz = D $ where $ D=Ax_0+By_0+Cz_0 $\newline
+$ Ax+By+Cz = D $ where $ D=Ax_0+By_0+Cz_0 $
 
 \subsection { Coord Sys Conv }
-Cylindrical to Rectangular\newline
+\textbf{Cylindrical to Rectangular}\newline
 $ x=r\cos(\theta) $\newline
 $ y=r\sin(\theta) $\newline
 $ z=z $\newline
-Rectangular to Cylindrical\newline
+\textbf{Rectangular to Cylindrical}\newline
 $ r=\sqrt{x^2+y^2} $\newline
 $ \tan(\theta) = \frac{y}{x} $\newline
 $ z=z $\newline
-Spherical to Rectangular\newline
+\textbf{Spherical to Rectangular}\newline
 $ x=\rho\sin(\phi)\cos(\theta) $\newline
 $ y=\rho\sin(\phi)\sin(\theta) $\newline
 $ z=\rho\cos(\phi) $\newline
-Rectangular to Spherical\newline
+\textbf{Rectangular to Spherical}\newline
 $ \rho=\sqrt{x^2+y^2+z^2} $\newline
 $ \tan(\theta) = \frac{y}{x} $\newline
 $ \cos(\phi) = \frac{z}{\sqrt{x^2+y^2+z^2}} $\newline
-Spherical to Cylindrical\newline
+\textbf{Spherical to Cylindrical}\newline
 $ r=\rho\sin(\phi) $\newline
 $ \theta=\theta $\newline
 $ z=\rho\cos(\phi) $\newline
-Cylindrical to Spherical\newline
+\textbf{Cylindrical to Spherical}\newline
 $ \rho=\sqrt{r^2+z^2} $\newline
 $ \theta=\theta $\newline
-$ \cos(\phi) = \frac{z}{\sqrt{r^2+z^2}} $\newline
-
-\subsection{Unit Circle}
-\includegraphics[scale=0.25]{unit_circle}
-
+$ \cos(\phi) = \frac{z}{\sqrt{r^2+z^2}} $
+\newline\newline\newline
 \subsection{Surfaces}
 \textbf{Ellipsoid}\newline
 $ \frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2} = 1 $\newline
@@ -277,11 +292,11 @@ $f_y(x,y) = z_y = \frac{\partial z}{\partial y} = \frac{\partial f(x,y)}{\partia
 \textbf{Notation}\newline
 For $ f_{xyy} $, work "inside to outside" $ f_{x} $ then $ f_{xy} $, then $ f_{xyy} $\newline
 $f_{xyy} = \frac{\partial^3 f}{\partial x \partial^2 y}, $\newline
-For $\frac{\partial^3 f}{\partial x \partial^2 y}$ , work right to left in the denominator\newline
+For $\frac{\partial^3 f}{\partial x \partial^2 y}$ , work right to left in the denominator
 
 \subsection {Gradients}
 The Gradient of a function in 2 variables is $ \nabla f = < f_x, f_y > $\newline
-The Gradient of a function in 3 variables is $ \nabla f = < f_x, f_y, f_z > $\newline
+The Gradient of a function in 3 variables is $ \nabla f = < f_x, f_y, f_z > $
 
 \subsection {Chain Rule(s)}
 
@@ -298,7 +313,7 @@ and y has the derivative:\newline
 $ \frac{dy}{dt} $ \newline
 In this case (with z containing x and y as well as x and y both containing s and t), the chain rule for $ \frac{\partial z}{\partial s} $ is $ \frac{\partial z}{\partial s} = \frac{\partial z}{\partial x} \frac{\partial x}{\partial s} $\newline
 The chain rule for $ \frac{\partial z}{\partial t} $ is $ \frac{\partial z}{\partial t} = \frac{\partial z}{\partial x} \frac{\partial x}{\partial t} + \frac{\partial z}{\partial y} \frac{dy}{dt}$\newline
-Note: the use of "d" instead of $ "\partial" $ with the function of only one independent variable\newline
+Note: the use of "d" instead of $ "\partial" $ with the function of only one independent variable
 
 \subsection{Limits and Continuity}
 \textbf{Limits in 2 or more variables}\newline
@@ -327,12 +342,12 @@ Let z=f(x,y) be a fuction, (a,b) ap point in the domain (a valid input point) an
 The Directional Derivative is then the derivative at the point (a,b) in the direction of $ \hat{u} $ or:\newline
 $ D_{\vec{u}}f(a,b) = \hat{u} \cdot \nabla f(a,b)$\newline
 This will return a \textit{scalar}.
-4-D version: $ D_{\vec{u}}f(a,b,c) = \hat{u} \cdot \nabla f(a,b,c) $\newline
+4-D version: $ D_{\vec{u}}f(a,b,c) = \hat{u} \cdot \nabla f(a,b,c) $
 
 \subsection{Tangent Planes}
 let F(x,y,z) = k be a surface and P = $(x_0, y_0, z_0)$ be a point on that surface.\newline
 Equation of a Tangent Plane:\newline
-$ \nabla F(x_0,y_0,z_0) \cdot <x-x_0, y-y_0, z-z_0> $\newline
+$ \nabla F(x_0,y_0,z_0) \cdot <x-x_0, y-y_0, z-z_0> $
 
 \subsection {Approximations}
 let $ z=f(x,y) $ be a differentiable function
@@ -340,7 +355,7 @@ total differential of f = dz\newline
 $dz= \nabla f \cdot < dx, dy >$\newline
 This is the \textit{approximate} change in z\newline
 The actual change in z is the difference in z values:\newline
-$ \Delta z = z-z_1 $\newline
+$ \Delta z = z-z_1 $
 
 \subsection {Maxima and Minima}
 \textbf{Internal Points}\newline
@@ -363,5 +378,64 @@ IF (a) D $>$ 0 AND $ f_{xx} < 0, $ f(x,y) is local max value\newline
 2. Check each line (0 $\le$ x $\le$ 5 would give x=0 and x=5 )\newline
 On Bounded Equations, this is the global min and max...second derivative test is not needed.
 
+\subsection{Lagrange Multipliers}
+Given a function f(x,y) with a constraint g(x,y), solve the following system of equations to find the max and min points on the constraint (NOTE: may need to also find internal points.):\newline
+$ \nabla f = \lambda \nabla g $\newline
+$ g(x,y) = 0 (or k if given) $
+
+\subsection{Double Integrals}
+With Respect to the xy-axis, if taking an integral,
+$ \int\int dy dx $ is cutting in vertical rectangles, 
+$ \int\int dx dy $ is cutting in horizontal rectangles\newline
+
+\textbf{Polar Coordinates}
+When using polar coordinates, $ dA = r dr  d\theta $
+
+\subsection{Surface Area of a Curve}
+let z = f(x,y) be continuous over S (a closed Region in 2D domain)\newline
+Then the surface area of z = f(x,y) over S is:\newline
+$ SA = \int\int_S\sqrt{f_x^2+f_y^2+1} dA $
+
+\subsection {Triple Integrals}
+$ \int\int\int_s f(x,y,z)dv = \int_{a_1}^{a_2}\int_{\phi_1(x)}^{\phi_2(x)}\int_{\psi_1(x,y)}^{\psi_2(x,y)} f(x,y,z)dzdydx $\newline
+Note: $ dv $ can be exchanged for $ dxdydz $ in any order, but you must then choose your limits of integration according to that order
+
+\subsection {Jacobian Method}
+$ \int\int_Gf(g(u,v),h(u,v)) | J(u,v) | du dv = \int\int_R f(x,y) dx dy $\newline
+\[
+J(u,v) = 
+\begin{vmatrix}
+\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+\end{vmatrix}
+\]\newline
+Common Jacobians:\newline
+Rect. to Cylindrical: $r$\newline
+Rect. to Spherical: $\rho^2 \sin(\phi)$
+\vfill
+\columnbreak
+
+\subsection {Vector Fields}
+%note, this one should be moved around so that it is on the last column...it's kinda big.
+let $ f(x,y,z) $ be a scalar field and $ \vec{F}(x,y,z) = M(x,y,z)\hat{i} + N(x,y,z)\hat{j} + P(x,y,z)\hat{k} $ be a vector field,\newline
+Grandient of f = $ \nabla f = < \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} >$\newline
+Divergence of $ \vec{F}$:\newline $ \nabla\cdot\vec{F} = \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y} + \frac{\partial P}{\partial z} $\newline
+Curl of $ \vec{F}$:\newline $ \nabla\times\vec{F} = 
+\begin{vmatrix}
+\hat{i} & \hat{j} & \hat{k} & \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+M & N & P
+\end{vmatrix} $\newline
+
+\subsection {Other Information}
+$ \frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}} $\newline
+Where a Cone is defined as $ z = \sqrt{a(x^2+y^2)}, $\newline
+In Spherical Coordinates, $ \phi = \cos^{-1}(\frac{a}{1+a}) $
+
+
+\subsection{Unit Circle}
+(cos, sin)\newline
+\includegraphics[scale=0.5]{unit_circle}
+\vfill
 \end{multicols*}
 \end{document}
