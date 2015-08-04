@@ -17,10 +17,12 @@ To compile the cheat sheet from source, just run it in a TeX parsing engine, I u
 
 DO NOT MOVE THE SOURCE FILE WITHOUT ALSO MOVING "sheet_images" !!!!
 
+Also to be noted, I found the images by searching on google for the relevant surfaces.
+
 unit\_circle isn't required, it's just included because I used it and it is interesting. It is not my own work, and I did include an Originally Retrieved from note at the top of unit\_circle.tex.
 
-Notes on Updating:
+Also included, by popular demand, is a slightly-reformatted version that is made by "printing" both sides onto one side leaving the other side to be used for whatever. This is made by hand and is not updated from the tex document. As such, it may end up being behind the tex-generated PDF.
 
-I am planning on updating this as needed for my Calculus 3 class in the summer of 2015. The problem with this is that it this class will be ending in approximately 2 weeks, and thus, this project may have a very short life.
+As of this commit, I am in the last day before finals, so this will probably be my last commit.
 
 With all that said, have fun!

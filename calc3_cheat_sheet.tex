@@ -26,7 +26,7 @@
 % if using A4 paper. (This probably isn't strictly necessary.)
 % If using another size paper, use default 1cm margins.
 \ifthenelse{\lengthtest { \paperwidth = 11in}}
-    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+    { \geometry{top=.2in,left=.25in,right=.25in,bottom=.2in} }
     {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
         {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
         {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
@@ -91,7 +91,7 @@ $D_x \sec(x)=\sec(x)\tan(x)$\newline
 $D_x \csc(x)=-\csc(x)\cot(x)$\newline
 $D_x \sin^{-1}=\frac{1}{\sqrt{1-x^2}}, x \in [-1,1]$\newline
 $D_x \cos^{-1}=\frac{-1}{\sqrt{1-x^2}}, x \in [-1,1]$\newline
-$D_x \tan^{-1}=\frac{1}{1+x^2}$\newline
+$D_x \tan^{-1}=\frac{1}{1+x^2}, \frac{-\pi}{2}\le x \le \frac{\pi}{2}$\newline
 $D_x \sec^{-1}=\frac{1}{\mid x \mid \sqrt{x^2-1}}, |x| > 1$\newline
 $D_x \sinh(x)=\cosh(x)$\newline
 $D_x \cosh(x)=-\sinh(x)$\newline
@@ -126,6 +126,7 @@ $\int \cos(x) dx = \sin(x)+c $\newline
 $\int \sin(x) dx = -\cos(x)+c $\newline
 $\int \frac{1}{\sqrt{a^2-u^2}} dx = \sin^{-1}(\frac{u}{a})+c $\newline
 $\int \frac{1}{a^2+u^2} dx = \frac{1}{a}\tan^{-1}\frac{u}{a}+c $\newline
+$ \int ln(x) dx = (xln(x))-x+c $\newline
 
 \textbf{U-Substitution}\newline
 Let $ u=f(x) $ (can be more than one variable).\newline
@@ -202,7 +203,7 @@ $ \vec{u} \cdot \vec{v} = 0 $ when $ \bot $\newline
 Angle Between $ \vec{u} $ and $ \vec{v} $:\newline
 $ \theta = \cos^{-1}(\frac{\vec{u} \cdot \vec{v}}{||\vec{u}||\:||\vec{v}||}) $\newline
 Projection of $ \vec{u} $ onto $ \vec{v} $:\newline
-$ pr_{\vec{v}}\vec{u} = \frac{\vec{u} \cdot \vec{v}}{||\vec{u}||^2} $\newline
+$ pr_{\vec{v}}\vec{u} = (\frac{\vec{u} \cdot \vec{v}}{||\vec{v}||^2})\vec{v} $\newline
 
 \textbf{Cross Product}\newline
 $\vec{u} \times \vec{v}$\newline
@@ -226,6 +227,13 @@ $ (x_0, y_0, z_0) $ is a point on the plane and $ <A,B,C> $ is a normal vector\n
 $A(x-x_0)+B(y-y_0)+C(z-z_0) = 0$\newline
 $ <A,B,C> \cdot <x-x_0, y-y_0, z-z_0> = 0 $\newline
 $ Ax+By+Cz = D $ where $ D=Ax_0+By_0+Cz_0 $
+
+\subsection {Equation of a line}
+A line requires a Direction Vector $ \vec{u}=<u_1,u_2,u_3> $ and a point $(x_1,y_1,z_1)$\newline
+then,\newline a parameterization of a line could be:\newline
+$ x = u_1t+x_1 $\newline
+$ y = u_2t+y_1 $\newline
+$ z = u_3t+z_1 $\newline
 
 \subsection { Coord Sys Conv }
 \textbf{Cylindrical to Rectangular}\newline
@@ -337,6 +345,9 @@ Which means:\newline
 2. The fn value is defined\newline
 3. They are the same value
 
+\vfill
+\columnbreak
+
 \subsection{Directional Derivatives}
 Let z=f(x,y) be a fuction, (a,b) ap point in the domain (a valid input point) and $ \hat{u} $ a unit vector (2D).\newline
 The Directional Derivative is then the derivative at the point (a,b) in the direction of $ \hat{u} $ or:\newline
@@ -412,8 +423,6 @@ J(u,v) =
 Common Jacobians:\newline
 Rect. to Cylindrical: $r$\newline
 Rect. to Spherical: $\rho^2 \sin(\phi)$
-\vfill
-\columnbreak
 
 \subsection {Vector Fields}
 %note, this one should be moved around so that it is on the last column...it's kinda big.
@@ -425,24 +434,112 @@ Curl of $ \vec{F}$:\newline $ \nabla\times\vec{F} =
 \hat{i} & \hat{j} & \hat{k} & \\
 \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
 M & N & P
-\end{vmatrix} $\newline
+\end{vmatrix} $
 
-\subsection {Other Information}
-$ \frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}} $\newline
-Where a Cone is defined as $ z = \sqrt{a(x^2+y^2)}, $\newline
-In Spherical Coordinates, $ \phi = \cos^{-1}(\sqrt{\frac{a}{1+a}}) $
+\subsection{Line Integrals}
+C given by $x = x(t), y = y(t), t\in [a,b]$\newline 
+$ \int_cf(x,y)ds = \int_a^bf(x(t), y(t)) ds $\newline
+where $ ds = \sqrt{(\frac{dx}{dt})^2+(\frac{dy}{dt})^2} dt $\newline
+or $ \sqrt{1+(\frac{dy}{dx})^2} dx $\newline
+or $ \sqrt{1+(\frac{dx}{dy})^2} dy $\newline
+To evaluate a Line Integral,\newline
+$\cdot$ get a paramaterized version of the line (usually in terms of t, though in exclusive terms of x or y is ok)\newline
+$\cdot$ evaluate for the derivatives needed (usually dy, dx, and/or dt)\newline
+$\cdot$ plug in to original equation to get in terms of the independant variable\newline
+$\cdot$ solve integral\newline
 
+\textbf{Work}\newline
+Let $ \vec{F} = M\hat{i}+\hat{j}+\hat{k} $ (force) $ M=M(x,y,z), N=N(x,y,z), P=P(x,y,z) $\newline
+(Literally)$ d\vec{r} = dx\hat{i}+dy\hat{j}+dz\hat{k} $\newline
+Work $ w = \int_c\vec{F}\cdot d\vec{r} $\newline
+(Work done by moving a particle over curve C with force $ \vec{F} $)
+
+\subsection{Independence of Path}
+\textbf{Fund Thm of Line Integrals}\newline
+C is curve given by $ \vec{r}(t), t\in[a,b];\newline \vec{r}\prime(t) $ exists. If $ f(\vec{r}) $ is continuously differentiable on an open set containing C, then $ \int_c\nabla f(\vec{r}) \cdot d\vec{r} = f(\vec{b}) - f(\vec{a}) $\newline
+\textbf{Equivalent Conditions}\newline
+$ \vec{F}(\vec{r}) $ continuous on open connected set D. Then,\newline
+$ (a) \vec{F} = \nabla f $ for some fn f. (if $ \vec{F} $ is conservative)
+$ \Leftrightarrow (b) \int_c\vec{F}(\vec{r})\cdot d\vec{r} is indep. of path in D $\newline
+$ \Leftrightarrow (c) \int_c\vec{F}(\vec{r})\cdot d\vec{r} = 0 $ for all closed paths in D.\newline
+\textbf{Conservation Theorem}\newline
+$ \vec{F} = M\hat{i}+N\hat{j}+P\hat{k} $ continuously differentiable on open, simply connected set D.\newline
+$ \vec{F} $ conservative $ \Leftrightarrow \nabla\times\vec{F} = \vec{0} $ \newline
+(in 2D $ \nabla\times\vec{F}=\vec{0} $ iff $ M_y = N_x$)
+
+\subsection{Green's Theorem}
+(method of changing line integral for double integral - Use for Flux and Circulation across 2D curve and line integrals over a closed boundary)\newline
+$ \oint Mdy - Ndx = \int\int_R(M_x+N_y)dxdy $\newline
+$ \oint Mdx + Ndy = \int\int_R (N_x-M_y) dxdy $\newline
+Let:\newline
+$\cdot$R be a region in xy-plane\newline
+$\cdot$C is simple, closed curve enclosing R (w/ paramerization $ \vec{r}(t) $)\newline
+$ \cdot\vec{F}(x,y) = M(x,y)\hat{i} + N(x,y)\hat{j} $ be continuously differentiable over R$\cup$C. \newline
+\textbf{Form 1: Flux Across Boundary}\newline
+$ \vec{n} = $ unit normal vector to C\newline
+$ \oint_c \vec{F}\cdot\vec{n} = \int\int_R \nabla\cdot\vec{F} dA $\newline
+$ \Leftrightarrow\oint Mdy - Ndx = \int\int_R(M_x+N_y)dxdy $\newline
+\textbf{Form 2: Circulation Along Boundary}\newline
+$ \oint_c\vec{F}\cdot d\vec{r} = \int\int_R \nabla\times\vec{F}\cdot\hat{u} dA $\newline
+$ \Leftrightarrow \oint Mdx + Ndy = \int\int_R (N_x-M_y) dxdy $\newline
+\textbf{Area of R}\newline
+$ A = \oint(\frac{-1}{2}y dx + \frac{1}{2}x dy) $
+
+\subsection{Surface Integrals}
+Let\newline
+$\cdot$R be closed, bounded region in xy-plane\newline
+$\cdot$f be a fn with first order partial derivatives on R\newline
+$\cdot$G be a surface over R given by $ z=f(x,y) $\newline
+$\cdot g(x,y,z) = g(x,y,f(x,y))$ is cont. on R\newline
+Then,\newline$ \int\int_G g(x,y,z) dS = \int\int_R g(x,y,f(x,y)) dS $\newline
+where $ dS = \sqrt{f_x^2+f_y^2+1}dydx $\newline
+\textbf{Flux of $ \vec{F} $ across G}\newline
+$ \int\int_G\vec{F}\cdot{n} dS = \int\int_R[-Mf_x-Nf_y+P]dxdy $\newline
+where:\newline
+$\cdot\vec{F}(x,y,z) = M(x,y,z)\hat{i} + N(x,y,z)\hat{j} + P(x,y,z)\hat{k} $\newline
+$\cdot$G is surface f(x,y)=z\newline
+$\cdot\vec{n}$ is upward unit normal on G.\newline
+$\cdot$f(x,y) has continuous $1^{st}$ order partial derivatives
+
+\subsection{Gauss' Divergence Thm}
+(3D Analog of Green's Theorem - Use for Flux over a 3D surface)
+Let:\newline
+$ \cdot\vec{F}(x,y,z) $ be vector field continuously differentiable in solid S\newline
+$ \cdot $S is a 3D solid
+$ \cdot\partial S $ boundary of S (A Surface)\newline
+$ \cdot\hat{n} $unit outer normal to $ \partial S $\newline
+Then,\newline
+$ \int\int_{\partial S}\vec{F}(x,y,z)\cdot\hat{n}dS = \int\int\int_S\nabla\cdot\vec{F} dV $\newline
+(dV = dxdydz)
 
 \subsection{Unit Circle}
 (cos, sin)\newline
-\includegraphics[scale=0.5]{unit_circle}
+\includegraphics[scale=0.625]{unit_circle}
+\vfill
+\columnbreak
+\subsection {Other Information}
+$ \frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}} $\newline
+Where a Cone is defined as $ z = \sqrt{a(x^2+y^2)}, $\newline
+In Spherical Coordinates, $ \phi = \cos^{-1}(\sqrt{\frac{a}{1+a}}) $\newline
+Right Circular Cylinder:\newline
+$ V=\pi r^2h, SA=\pi r^2+2\pi rh $\newline
+$ \lim_{n\to \inf} (1+\frac{m}{n})^{pn} = e^{mp} $\newline
+Law of Cosines:\newline
+$ a^2 = b^2 + c^2 - 2bc(\cos(\theta)) $
+
+\subsection{Stokes Theorem}
+Let:\newline
+$\cdot$S be a 3D surface\newline
+$\cdot\vec{F}(x,y,z) = M(x,y,z)\hat{i}+N(x,y,z)\hat{j}+P(x,y,z)\hat{l} $\newline
+$\cdot$M,N,P have continuous $1^{st}$ order partial derivatives\newline
+$\cdot$C is piece-wise smooth, simple, closed, curve, positively oriented\newline
+$\cdot\hat{T}$ is unit tangent vector to C.\newline
+Then,\newline
+$ \oint\vec{F}_c\cdot\hat{T}dS = \int\int_s (\nabla\times\vec{F})\cdot\hat{n} dS = \int\int_R(\nabla\times\vec{F})\cdot\vec{n}dxdy $\newline
+Remember:\newline
+$ \oint\vec{F}\cdot\vec{T}ds = \int_c (Mdx + Ndy + Pdz) $
+
 %The following can go away as needed, it is here so I can put my Accreditation message/source code message at the bottom right.
-\vfill
-\columnbreak
-\phantom\newline
-\vfill
-\columnbreak
-\vphantom{A}
 \vfill
 {\fontsize{.5}{1}\selectfont Originally Written By Daniel Kenner for MATH 2210 at the University of Utah.\newline Source code available at https://github.com/keytotime/Calc3\_CheatSheet}
 \end{multicols*}
