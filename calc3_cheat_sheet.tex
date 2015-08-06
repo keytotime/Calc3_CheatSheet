@@ -266,7 +266,7 @@ $ z=\rho\cos(\phi) $\newline
 $ \rho=\sqrt{r^2+z^2} $\newline
 $ \theta=\theta $\newline
 $ \cos(\phi) = \frac{z}{\sqrt{r^2+z^2}} $
-\newline\newline\newline
+
 \subsection{Surfaces}
 \textbf{Ellipsoid}\newline
 $ \frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2} = 1 $\newline
@@ -314,10 +314,8 @@ The Gradient of a function in 3 variables is $ \nabla f = < f_x, f_y, f_z > $
 
 \subsection {Chain Rule(s)}
 
-Take the Partial derivative with respect to the first-order variables of the function times the partial (or normal) derivative of the first-order variable to the ultimate variable you are looking for summed with the same process for other first-order variables this makes sens for.
-
+Take the Partial derivative with respect to the first-order variables of the function times the partial (or normal) derivative of the first-order variable to the ultimate variable you are looking for summed with the same process for other first-order variables this makes sense for.\newline
 Example:\newline
-
 let x = x(s,t), y = y(t) and z = z(x,y).\newline
 z then has first partial derivative:\newline
 $ \frac{\partial z}{\partial x} $ and $ \frac{\partial z}{\partial y} $ \newline
@@ -398,11 +396,11 @@ $ \nabla f = \lambda \nabla g $\newline
 $ g(x,y) = 0 (or k if given) $
 
 \subsection{Double Integrals}
-With Respect to the xy-axis, if taking an integral,
-$ \int\int dy dx $ is cutting in vertical rectangles, 
+With Respect to the xy-axis, if taking an integral,\newline
+$ \int\int dy dx $ is cutting in vertical rectangles,\newline
 $ \int\int dx dy $ is cutting in horizontal rectangles\newline
 
-\textbf{Polar Coordinates}
+\textbf{Polar Coordinates}\newline
 When using polar coordinates, $ dA = r dr  d\theta $
 
 \subsection{Surface Area of a Curve}
@@ -488,6 +486,19 @@ $ \Leftrightarrow \oint Mdx + Ndy = \int\int_R (N_x-M_y) dxdy $\newline
 \textbf{Area of R}\newline
 $ A = \oint(\frac{-1}{2}y dx + \frac{1}{2}x dy) $
 
+\subsection{Gauss' Divergence Thm}
+(3D Analog of Green's Theorem - Use for Flux over a 3D surface)
+Let:\newline
+$ \cdot\vec{F}(x,y,z) $ be vector field continuously differentiable in solid S\newline
+$ \cdot $S is a 3D solid
+$ \cdot\partial S $ boundary of S (A Surface)\newline
+$ \cdot\hat{n} $unit outer normal to $ \partial S $\newline
+Then,\newline
+$ \int\int_{\partial S}\vec{F}(x,y,z)\cdot\hat{n}dS = \int\int\int_S\nabla\cdot\vec{F} dV $\newline
+(dV = dxdydz)
+
+\vfill\columnbreak
+
 \subsection{Surface Integrals}
 Let\newline
 $\cdot$R be closed, bounded region in xy-plane\newline
@@ -503,21 +514,11 @@ $\cdot\vec{F}(x,y,z) = M(x,y,z)\hat{i} + N(x,y,z)\hat{j} + P(x,y,z)\hat{k} $\new
 $\cdot$G is surface f(x,y)=z\newline
 $\cdot\vec{n}$ is upward unit normal on G.\newline
 $\cdot$f(x,y) has continuous $1^{st}$ order partial derivatives
-
-\subsection{Gauss' Divergence Thm}
-(3D Analog of Green's Theorem - Use for Flux over a 3D surface)
-Let:\newline
-$ \cdot\vec{F}(x,y,z) $ be vector field continuously differentiable in solid S\newline
-$ \cdot $S is a 3D solid
-$ \cdot\partial S $ boundary of S (A Surface)\newline
-$ \cdot\hat{n} $unit outer normal to $ \partial S $\newline
-Then,\newline
-$ \int\int_{\partial S}\vec{F}(x,y,z)\cdot\hat{n}dS = \int\int\int_S\nabla\cdot\vec{F} dV $\newline
-(dV = dxdydz)
-
+\vfill
 \subsection{Unit Circle}
 (cos, sin)\newline
-\includegraphics[scale=0.625]{unit_circle}
+\includegraphics[scale=0.64]{unit_circle}
+\newline\newline\newline\newline
 \vfill
 \columnbreak
 \subsection {Other Information}
@@ -544,6 +545,6 @@ $ \oint\vec{F}\cdot\vec{T}ds = \int_c (Mdx + Ndy + Pdz) $
 
 %The following can go away as needed, it is here so I can put my Accreditation message/source code message at the bottom right.
 \vfill
-{\fontsize{.5}{1}\selectfont Originally Written By Daniel Kenner for MATH 2210 at the University of Utah.\newline Source code available at https://github.com/keytotime/Calc3\_CheatSheet}
+{\fontsize{.5}{1}\selectfont Originally Written By Daniel Kenner for MATH 2210 at the University of Utah.\newline Source code available at https://github.com/keytotime/Calc3\_CheatSheet\newline Thanks to Kelly Macarthur for Teaching and Providing Notes.}
 \end{multicols*}
 \end{document}
