@@ -26,7 +26,7 @@
 % if using A4 paper. (This probably isn't strictly necessary.)
 % If using another size paper, use default 1cm margins.
 \ifthenelse{\lengthtest { \paperwidth = 11in}}
-    { \geometry{top=.2in,left=.25in,right=.25in,bottom=.2in} }
+    { \geometry{top=.25in,left=.25in,right=.25in,bottom=.25in} }
     {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
         {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
         {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
@@ -221,19 +221,25 @@ v_1 & v_2 & v_3
 \]\newline 
 $ \vec{u} \times \vec{v} = \vec{0} $ means the vectors are paralell
 
-\subsection {Equation of a Plane}
+\subsection {Lines and Planes}
+\textbf{Equation of a Plane}\newline
 $ (x_0, y_0, z_0) $ is a point on the plane and $ <A,B,C> $ is a normal vector\newline
 
 $A(x-x_0)+B(y-y_0)+C(z-z_0) = 0$\newline
 $ <A,B,C> \cdot <x-x_0, y-y_0, z-z_0> = 0 $\newline
-$ Ax+By+Cz = D $ where $ D=Ax_0+By_0+Cz_0 $
+$ Ax+By+Cz = D $ where $ D=Ax_0+By_0+Cz_0 $\newline
 
-\subsection {Equation of a line}
+\textbf{Equation of a line}\newline
 A line requires a Direction Vector $ \vec{u}=<u_1,u_2,u_3> $ and a point $(x_1,y_1,z_1)$\newline
 then,\newline a parameterization of a line could be:\newline
 $ x = u_1t+x_1 $\newline
 $ y = u_2t+y_1 $\newline
 $ z = u_3t+z_1 $\newline
+
+\textbf{Distance from a Point to a Plane}\newline
+The distance from a point $(x_0,y_0,z_0)$ to a plane Ax+By+Cz=D can be expressed by the formula:\newline
+$ d=\frac{|Ax_0+By_0+Cz_0-D|}{\sqrt{A^2+B^2+C^2}} $\newline
+
 
 \subsection { Coord Sys Conv }
 \textbf{Cylindrical to Rectangular}\newline
@@ -344,9 +350,6 @@ Which means:\newline
 1. The limit exists\newline
 2. The fn value is defined\newline
 3. They are the same value
-
-\vfill
-\columnbreak
 
 \subsection{Directional Derivatives}
 Let z=f(x,y) be a fuction, (a,b) ap point in the domain (a valid input point) and $ \hat{u} $ a unit vector (2D).\newline
