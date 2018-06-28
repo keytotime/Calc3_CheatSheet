@@ -8,8 +8,21 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{amsmath}
-\graphicspath{ {sheet_images/} }
+\usepackage{verbatim}
 
+%Originally Modified by Daniel Kenner for Calc 3 Cheat Sheet
+%Template Originally found @ http://tex.stackexchange.com/questions/8827/preparing-cheat-sheets
+%Conic images originally found on google images when looking for named shapes
+%Then modify Modified by Luca Buratto
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%           ATTENZIONE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 19 righe disponobili al 10 maggio, senza eliminare altro e avendo documentato delle parti:
+%10 righe nella penultima colonna foglio2
+% 7 nell'ultima del foglio 2
+
+\graphicspath{ {sheet_images/} }
 %Originally Modified by Daniel Kenner for Calc 3 Cheat Sheet
 %Template Originally found @ http://tex.stackexchange.com/questions/8827/preparing-cheat-sheets
 %Conic images originally found on google images when looking for named shapes
@@ -71,7 +84,6 @@
 \footnotesize
 \begin{multicols*}{5}
 
-
 % multicol parameters
 % These lengths are set only within the two main columns
 %\setlength{\columnseprule}{0.25pt}
@@ -80,32 +92,30 @@
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
-\section{Derivatives}
+\section{Regole derivate}
 \scriptsize
+$\mathrm{D}[\alpha f(x)+ \beta g(x)] = \alpha f'(x) + \beta g'(x) \qquad$\newline
+$\mathrm{D} [ {f(x) \cdot g(x)}] = f'(x) \cdot g(x) + f(x) \cdot g'(x)$ \newline
+$ \mathrm{D} \left[ {\frac{f(x)}{g(x)}} \right] = { f'(x)  \cdot g(x) - f(x) \cdot   \frac{g'(x)}{g(x)^2}}$\newline
+$\mathrm{D} \left[ {1 \over f(x)} \right] = - \frac{f'(x)} {f(x)^2} $\newline
+$ \mathrm{D}[f^{-1}(y)]  =  {1 \over f'(x)}$\newline
+$ \mathrm{D} \left[ f \left( g(x) \right) \right] = f' \left( g(x) \right) \cdot g'(x)$\newline
+\section{Derivate fondamentali}
 $D_x e^x=e^x$\newline
 $D_x \sin(x)=\cos(x)$\newline
 $D_x \cos(x)=-\sin(x)$\newline
-$D_x \tan(x)=\sec^2(x)$\newline
+$D_x \tan(x)=\frac{\sin(x)}{\cos(x)}$\newline
 $D_x \cot(x)=-\csc^2(x)$\newline
-$D_x \sec(x)=\sec(x)\tan(x)$\newline
-$D_x \csc(x)=-\csc(x)\cot(x)$\newline
+
 $D_x \sin^{-1}=\frac{1}{\sqrt{1-x^2}}, x \in [-1,1]$\newline
 $D_x \cos^{-1}=\frac{-1}{\sqrt{1-x^2}}, x \in [-1,1]$\newline
 $D_x \tan^{-1}=\frac{1}{1+x^2}, \frac{-\pi}{2}\le x \le \frac{\pi}{2}$\newline
 $D_x \sec^{-1}=\frac{1}{\mid x \mid \sqrt{x^2-1}}, |x| > 1$\newline
-$D_x \sinh(x)=\cosh(x)$\newline
-$D_x \cosh(x)=\sinh(x)$\newline
-$D_x \tanh(x)=sech^2(x)$\newline
-$D_x \coth(x)=-csch^2(x)$\newline
-$D_x sech(x)=-sech(x)\tanh(x)$\newline
-$D_x csch(x)=-csch(x)\coth(x)$\newline
-$D_x \sinh^{-1}=\frac{1}{\sqrt{x^2+1}}$\newline
-$D_x \cosh^{-1}=\frac{-1}{\sqrt{x^2-1}}, x > 1$\newline
-$D_x \tanh^{-1}=\frac{1}{1-x^2} -1 < x < 1$\newline
-$D_x sech^{-1}=\frac{1}{x \sqrt{1-x^2}}, 0 < x < 1$
+
+
 $ D_x \ln(x) = \frac{1}{x} $
 
-\section{Integrals}
+\section{Integrali}
 \scriptsize
 $\int \frac{1}{x}dx = \ln|x|+c$\newline
 $\int e^x dx = e^x+c $\newline
@@ -113,13 +123,8 @@ $\int a^x dx = \frac{1}{\ln a} a^x+c $\newline
 $\int e^{ax} dx = \frac{1}{a} e^{ax}+c $\newline
 $\int \frac{1}{\sqrt{1-x^2}} dx = \sin^{-1}(x)+c $\newline
 $\int \frac{1}{1+x^2} dx = \tan^{-1}(x)+c $\newline
-$\int \frac{1}{x\sqrt{x^2-1}} dx = \sec^{-1}(x)+c $\newline
-$\int \sinh(x) dx = \cosh(x)+c $\newline
-$\int \cosh(x) dx = \sinh(x)+c $\newline
-$\int \tanh(x) dx = \ln|\cosh(x)|+c $\newline
-$\int \tanh(x)sech(x) dx = -sech(x)+c $\newline
-$\int sech^2(x) dx = \tanh(x)+c $\newline
-$\int csch(x)\coth(x) dx = -csch(x)+c $\newline
+
+
 $\int \tan(x) dx = -\ln|\cos(x) |+c $\newline
 $\int \cot(x) dx = \ln|\sin(x)|+c $\newline
 $\int \cos(x) dx = \sin(x)+c $\newline
@@ -128,39 +133,27 @@ $\int \frac{1}{\sqrt{a^2-u^2}} dx = \sin^{-1}(\frac{u}{a})+c $\newline
 $\int \frac{1}{a^2+u^2} dx = \frac{1}{a}\tan^{-1}\frac{u}{a}+c $\newline
 $ \int ln(x) dx = (xln(x))-x+c $\newline
 
-\textbf{U-Substitution}\newline
-Let $ u=f(x) $ (can be more than one variable).\newline
-Determine: $ du = \frac{f(x)}{dx}dx $ and solve for dx.\newline
-Then, if a definite integral, substitute the bounds for $ u=f(x) $ at each bounds\newline
-Solve the integral using u.\newline
+\textbf{Integrazione per sostituzione}\newline
+Sia $ u=f(x) $ (pu\`o essere pi\`u di una variabile).\newline
+Determina: $ du = \frac{f(x)}{dx}dx $ e risoli per  dx.\newline
+Poi, se l'integrale \`e definito, sostituisci i confini per $ u=f(x) $ per ciascun confine\newline
 
-\textbf{Integration by Parts}\newline
+Risolvi l'integrale usando u.\newline
+
+\textbf{Integrazione per parti}\newline
 $ \int u dv = uv-\int v du $
 
-\section{Fns and Identities}
-$\sin(\cos^{-1}(x)) = \sqrt{1-x^2}$\newline
-$\cos(\sin^{-1}(x)) = \sqrt{1-x^2} $\newline
-$\sec(\tan^{-1}(x)) = \sqrt{1+x^2} $\newline
-$\tan(\sec^{-1}(x)) \newline = (\sqrt{x^2-1} \: $if$ \: x \ge 1)\newline =(-\sqrt{x^2-1} \: if \: x \le -1)$
-$\sinh^{-1}(x) = \ln{x+\sqrt{x^2+1}} $\newline
-$\sinh^{-1}(x) = \ln{x+\sqrt{x^2-1}}, \: x \ge -1 $\newline
-$\tanh^{-1}(x) = \frac{1}{2}\ln{x+\frac{1+x}{1-x}}, \: 1 < x < -1 $\newline
-$sech^{-1}(x) = \ln[{\frac{1+\sqrt{1-x^2}}{x}}], \: 0 < x \le -1 $\newline
-$\sinh(x) = \frac{e^{x}-e^{-x}}{2} $\newline
-$\cosh(x) = \frac{e^{x}+e^{-x}}{2} $
+\section{Sezione}
 
-\section{Trig Identities}
+\section{Identit\`a trigonometriche}
 $ \sin^2(x)+\cos^2(x) = 1 $\newline
-$ 1+\tan^2(x) = \sec^2(x) $\newline
-$ 1+\cot^2(x) = \csc^2(x) $\newline
+
 $ \sin(x\pm y) = \sin(x)\cos(y)\pm\cos(x)\sin(y) $\newline
 $ \cos(x\pm y) = \cos(x)\cos(y)\pm\sin(x)\sin(y) $\newline
 $ \tan(x\pm y) = \frac{\tan(x)\pm\tan(y)}{1 \mp \tan(x)\tan(y)} $\newline
 $ \sin(2x) = 2\sin(x)\cos(x) $\newline
 $ \cos(2x) = \cos^{2}(x) - \sin^{2}(x) $\newline
-$ \cosh(n^{2}x)-\sinh^{2}x = 1 $\newline
-$ 1+\tan^2(x) = \sec^2(x) $\newline
-$ 1+\cot^2(x) = \csc^2(x) $\newline
+
 $ \sin^2(x) = \frac{1-\cos(2x)}{2} $\newline
 $ \cos^2(x) = \frac{1+\cos(2x)}{2} $\newline
 $ \tan^2(x) = \frac{1-\cos(2x)}{1+\cos(2x)} $\newline
@@ -168,47 +161,47 @@ $ \sin(-x) = -\sin(x) $\newline
 $ \cos(-x) = \cos(x) $\newline
 $ \tan(-x) = -\tan(x) $
 
-\section {Calculus 3 Concepts}
+\section {Calculo 3 Concetti}
 
-\subsection{Cartesian coords in 3D}
-given two points:\newline
+\subsection{Coordinate cartesiane 3D}
+dati due punti:\newline
 $ (x_1, y_1, z_1) $ and $ (x_2, y_2, z_2)$,\newline
-Distance between them:\newline
+Distanza fra di loro :\newline
 $ \sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2} $\newline
-Midpoint:\newline
+Pt medio:\newline
 $ (\frac{x_1+x_2}{2},\frac{y_1+y_2}{2},\frac{z_1+z_2}{2}) $\newline
-Sphere with center (h,k,l) and radius r:\newline
-$ (x-h)^2 + (y-k)^2 + (z-l)^2 = r^2 $
+Sfera di centro (h,k,m) and radius r:\newline
+$ (x-h)^2 + (y-k)^2 + (z-m)^2 = r^2 $
 
-\subsection{Vectors}
-Vector: $ \vec{u} $\newline
-Unit Vector: $ \hat{u} $\newline
-Magnitude: $ ||\vec{u}|| = \sqrt{u_1^2+u_2^2+u_3^2}$\newline
-Unit Vector: $ \hat{u} = \frac{\vec{u}}{||\vec{u}||} $\newline
+\subsection{Vettori}
+Vettore: $ \vec{u} $\newline
+Vettore unitario: $ \hat{u} = \frac{\vec{u}}{||\vec{u}||}$\newline
+Norma: $ ||\vec{u}|| = \sqrt{u_1^2+u_2^2+u_3^2}$\newline
 
-\textbf{Dot Product}\newline
+
+\textbf{Prodotto scalare}\newline
 $ \vec{u} \cdot \vec{v} $\newline
-Produces a Scalar \newline
-(Geometrically, the dot product is a vector projection)\newline
-$\vec{u} = < u_1, u_2, u_3 >$\newline
+produce uno Scalare  \newline
+(geometricamente, il prodotto scalare \`e il vettore proiezione)\newline
+$\vec{u} = < u_1, u_2, u_3 >$ \newline
 $\vec{v} = < v_1, v_2, v_3 >$\newline
-$ \vec{u} \cdot \vec{v} = \vec{0} $ means the two vectors are Perpendicular
-$ \theta $ is the angle between them.\newline
+se $ \vec{u} \cdot \vec{v} = \vec{0} $ significa che i due vettori sono Perpendicolari, 
+$ \theta $ \`e l'angolo compreso fra loro.\newline
 $\vec{u} \cdot \vec{v} = ||\vec{u}||\:||\vec{v}||\cos(\theta) $\newline
 $\vec{u} \cdot \vec{v} = u_1v_1 + u_2v_2 + u_3v_3 $\newline
 NOTE:\newline
 $ \hat{u} \cdot \hat{v} = \cos(\theta) $\newline
 $ ||\vec{u}||^2 = \vec{u} \cdot \vec{u} $\newline
-$ \vec{u} \cdot \vec{v} = 0 $ when $ \bot $\newline
-Angle Between $ \vec{u} $ and $ \vec{v} $:\newline
+$ \vec{u} \cdot \vec{v} = 0 $ quando $ \bot $\newline
+Angolo fra $ \vec{u} $ e $ \vec{v} $:\newline
 $ \theta = \cos^{-1}(\frac{\vec{u} \cdot \vec{v}}{||\vec{u}||\:||\vec{v}||}) $\newline
-Projection of $ \vec{u} $ onto $ \vec{v} $:\newline
+Proiezione di  $ \vec{u} $ su  $ \vec{v} $:\newline
 $ pr_{\vec{v}}\vec{u} = (\frac{\vec{u} \cdot \vec{v}}{||\vec{v}||^2})\vec{v} $\newline
 
-\textbf{Cross Product}\newline
+\textbf{Prodotto vettoriale}\newline
 $\vec{u} \times \vec{v}$\newline
-Produces a Vector\newline
-(Geometrically, the cross product is the area of a paralellogram with sides $ ||\vec{u}|| $ and $ ||\vec{v}|| $)\newline
+Produce un Vettore\newline
+(Geometricamente, il prodotto vettoriale = l'area del paralellogramma di dimensioni $ ||\vec{u}|| $ e  $ ||\vec{v}|| $)\newline
 $\vec{u} = < u_1, u_2, u_3 >$\newline
 $\vec{v} = < v_1, v_2, v_3 >$\newline
 \[
@@ -219,200 +212,220 @@ u_1 & u_2 & u_3 \\
 v_1 & v_2 & v_3
 \end{vmatrix}
 \]\newline 
-$ \vec{u} \times \vec{v} = \vec{0} $ means the vectors are paralell
+$ \vec{u} \times \vec{v} = \vec{0} $ significa che i vettori sono paralleli 
 
-\subsection {Lines and Planes}
-\textbf{Equation of a Plane}\newline
-$ (x_0, y_0, z_0) $ is a point on the plane and $ <A,B,C> $ is a normal vector\newline
+\subsection {Linee e Piani}
+\textbf{Equazione del Plino}\newline
+$ (x_0, y_0, z_0) $ \`e un punto sul piano e $ <A,B,C> $ \`e un vettore normale \newline
 
 $A(x-x_0)+B(y-y_0)+C(z-z_0) = 0$\newline
 $ <A,B,C> \cdot <x-x_0, y-y_0, z-z_0> = 0 $\newline
-$ Ax+By+Cz = D $ where $ D=Ax_0+By_0+Cz_0 $\newline
+$ Ax+By+Cz = D $ dove $ D=Ax_0+By_0+Cz_0 $\newline
 
-\textbf{Equation of a line}\newline
-A line requires a Direction Vector $ \vec{u}=<u_1,u_2,u_3> $ and a point $(x_1,y_1,z_1)$\newline
-then,\newline a parameterization of a line could be:\newline
+\textbf{Equazione di una linea}\newline
+Una linea richiede un Vettore Direzionale $ \vec{u}=<u_1,u_2,u_3> $ e un punto $(x_1,y_1,z_1)$\newline
+poi,\newline le parametrizzazioni di una linea  possono essere:\newline
 $ x = u_1t+x_1 $\newline
 $ y = u_2t+y_1 $\newline
 $ z = u_3t+z_1 $\newline
 
-\textbf{Distance from a Point to a Plane}\newline
-The distance from a point $(x_0,y_0,z_0)$ to a plane Ax+By+Cz=D can be expressed by the formula:\newline
+\textbf{Distanza di un Punto da un Piano}\newline
+la distanza di un punto $(x_0,y_0,z_0)$ da un piano  Ax+By+Cz=D la posso esprimere attraverso la formula:\newline
 $ d=\frac{|Ax_0+By_0+Cz_0-D|}{\sqrt{A^2+B^2+C^2}} $\newline
 
 
-\subsection { Coord Sys Conv }
-\textbf{Cylindrical to Rectangular}\newline
-$ x=r\cos(\theta) $\newline
-$ y=r\sin(\theta) $\newline
-$ z=z $\newline
-\textbf{Rectangular to Cylindrical}\newline
-$ r=\sqrt{x^2+y^2} $\newline
-$ \tan(\theta) = \frac{y}{x} $\newline
-$ z=z $\newline
-\textbf{Spherical to Rectangular}\newline
-$ x=\rho\sin(\phi)\cos(\theta) $\newline
-$ y=\rho\sin(\phi)\sin(\theta) $\newline
-$ z=\rho\cos(\phi) $\newline
-\textbf{Rectangular to Spherical}\newline
-$ \rho=\sqrt{x^2+y^2+z^2} $\newline
-$ \tan(\theta) = \frac{y}{x} $\newline
-$ \cos(\phi) = \frac{z}{\sqrt{x^2+y^2+z^2}} $\newline
-\textbf{Spherical to Cylindrical}\newline
-$ r=\rho\sin(\phi) $\newline
-$ \theta=\theta $\newline
-$ z=\rho\cos(\phi) $\newline
-\textbf{Cylindrical to Spherical}\newline
-$ \rho=\sqrt{r^2+z^2} $\newline
-$ \theta=\theta $\newline
-$ \cos(\phi) = \frac{z}{\sqrt{r^2+z^2}} $
+\subsection {Legami fra teoremi }
+\textbf{Differenziabilit\`a,  derivabilit\`a e continuit\`a}\newline
+TDT: se esiste intorno di un pt in cui $f(x,y)$ ha derivate parziali continue nel pt, allora $f(x,y)$  differenziabile nel pt. \newline
+- Se $f(x,y)$ differenziabile nel pt, allora $f(x,y)$ è continua nel pt. (no viceversa) \newline
+- Se $f(x,y)$ differenziabile nel pt, allora $f(x,y)$ parzialmente derivabile nel pt. (no viceversa) \newline
+- no legami fra derivate parziali e contnuit\`a
 
-\subsection{Surfaces}
-\textbf{Ellipsoid}\newline
+\textbf{Teor Schwarz}\newline
+Se $f(x,y)$ definita in almeno un intorno del pt e sono definite e continue nel pt le derivate parziali prime, allora le derivate parziali seconde $f_{xy}=f_{yx}$ \newline
+\textbf{Titoletto}\newline
+
+\subsection{Superfici}
+\textbf{Ellissoide}\newline
 $ \frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2} = 1 $\newline
 \includegraphics[scale=0.15]{ellipsoid}\newline
-\textbf{Hyperboloid of One Sheet}\newline
+\textbf{Iperboloide di Un Foglio }\newline
 $ \frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2} = 1 $\newline
-(Major Axis: z because it follows - )\newline
+(Asse maggiore: asse Z in quanto non ha -)\newline
 \includegraphics[scale=0.15]{hyperboloid1}\newline
-\textbf{Hyperboloid of Two Sheets}\newline
+\textbf{Iperboloide di Due Fogli }\newline
 $ \frac{z^2}{c^2}-\frac{x^2}{a^2}-\frac{y^2}{b^2} = 1 $\newline
-(Major Axis: Z because it is the one not subtracted)\newline
+(Asse maggiore: asse Z in quanto unico che non ha -)\newline
 \includegraphics[scale=0.15]{hyperboloid2}\newline
-\textbf{Elliptic Paraboloid}\newline
+\textbf{Paraboloide Ellittico}\newline
 $ z=\frac{x^2}{a^2}+\frac{y^2}{b^2} $\newline
-(Major Axis: z because it is the variable NOT squared)\newline
+(Asse maggiore: Z in quanto variabile NON elevato
 \includegraphics[scale=0.15]{elliptic_paraboloid}\newline
-\textbf{Hyperbolic Paraboloid}\newline
-(Major Axis: Z axis because it is not squared)\newline
+\textbf{Paraboloide Iperbolico}\newline
+(Asse maggiore: asse Z in quanto non elevato al quadrato)\newline
 $ z=\frac{y^2}{b^2}-\frac{x^2}{a^2} $\newline
 \includegraphics[scale=0.15]{hyperbolic_paraboloid}\newline
-\textbf{Elliptic Cone}\newline
-(Major Axis: Z axis because it's the only one being subtracted)\newline
+\textbf{Cono Ellittico}\newline
+(Asse Maggiore: asse Z in quanto unico che ha segno -)\newline
 $ \frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2} = 0 $\newline
 \includegraphics[scale=0.15]{elliptic_cone}\newline
-\textbf{Cylinder}\newline
-1 of the variables is missing\newline
-OR\newline
+\textbf{Cilindro}\newline
+se manca una delle variabili \newline
+OPPURE\newline
 $ (x-a)^2+(y-b^2) = c $\newline
-(Major Axis is missing variable)
+(Asse Maggiore \`e la variabile mancante)
 
-\subsection{Partial Derivatives}
-Partial Derivatives are simply holding all other variables constant (and act like constants for the derivative) and only taking the derivative with respect to a given variable.\newline
-Given z=f(x,y), the partial derivative of z with respect to x is:\newline
+\subsection{Derivate Parziali}
+Si calcolano semplicemente tenendo ferme tutte le altre variabili (che si comportano come costanti per la derivata) e si calcola solo la derivata rispetto a una determinata variabile.\newline
+Data z=f(x,y), la derivata parziale di z rispetto alla variabile x \`e:\newline
 $f_x(x,y) = z_x = \frac{\partial z}{\partial x} = \frac{\partial f(x,y)}{\partial x}$\newline
-likewise for partial with respect to y:\newline
+idem per la derivata parziale rispetto ad y:\newline
 $f_y(x,y) = z_y = \frac{\partial z}{\partial y} = \frac{\partial f(x,y)}{\partial y}$\newline
-\textbf{Notation}\newline
-For $ f_{xyy} $, work "inside to outside" $ f_{x} $ then $ f_{xy} $, then $ f_{xyy} $\newline
+\textbf{Notazione}\newline
+Per $ f_{xyy} $, opera da dentro verso fuori  $ f_{x} $ then $ f_{xy} $, then $ f_{xyy} $\newline
 $f_{xyy} = \frac{\partial^3 f}{\partial x \partial^2 y}, $\newline
-For $\frac{\partial^3 f}{\partial x \partial^2 y}$ , work right to left in the denominator
+Per $\frac{\partial^3 f}{\partial x \partial^2 y}$ , opera da destra a sinistra nel denominatore
 
-\subsection {Gradients}
-The Gradient of a function in 2 variables is $ \nabla f = < f_x, f_y > $\newline
-The Gradient of a function in 3 variables is $ \nabla f = < f_x, f_y, f_z > $
+\subsection {Gradiente}
+Il Gradiente di una funzione in 2 variabili si indica con $ \nabla f = < f_x, f_y > $\newline
+Il Gradiente di una funzione in 3 variabili si indica con $ \nabla f = < f_x, f_y, f_z > $
 
-\subsection {Chain Rule(s)}
+\subsection {Regola(e) della Catena}
+no
 
-Take the Partial derivative with respect to the first-order variables of the function times the partial (or normal) derivative of the first-order variable to the ultimate variable you are looking for summed with the same process for other first-order variables this makes sense for.\newline
-Example:\newline
-let x = x(s,t), y = y(t) and z = z(x,y).\newline
-z then has first partial derivative:\newline
-$ \frac{\partial z}{\partial x} $ and $ \frac{\partial z}{\partial y} $ \newline
-x has the partial derivatives:\newline
-$ \frac{\partial x}{\partial s} $ and $ \frac{\partial x}{\partial t} $ \newline
-and y has the derivative:\newline
-$ \frac{dy}{dt} $ \newline
-In this case (with z containing x and y as well as x and y both containing s and t), the chain rule for $ \frac{\partial z}{\partial s} $ is $ \frac{\partial z}{\partial s} = \frac{\partial z}{\partial x} \frac{\partial x}{\partial s} $\newline
-The chain rule for $ \frac{\partial z}{\partial t} $ is $ \frac{\partial z}{\partial t} = \frac{\partial z}{\partial x} \frac{\partial x}{\partial t} + \frac{\partial z}{\partial y} \frac{dy}{dt}$\newline
-Note: the use of "d" instead of $ "\partial" $ with the function of only one independent variable
+\subsection{Limiti e Continuit\`a}
+\textbf{Limiti in 2 o pi\`u variabili}\newline
 
-\subsection{Limits and Continuity}
-\textbf{Limits in 2 or more variables}\newline
-Limits taken over a vectorized limit just evaluate separately for each component of the limit.\newline
-\textbf{Strategies to show limit exists}\newline
-1. Plug in Numbers, Everything is Fine\newline
-2. Algebraic Manipulation\newline
--factoring/dividing out\newline
--use trig identites\newline
-3. Change to polar coords\newline
-\:\:$if (x,y)\to(0,0)\Leftrightarrow r\to0$\newline
-\textbf{Strategies to show limit DNE}\newline
-1. Show limit is different if approached from different paths\newline
+I limiti rilevati su un limite vettoriale possono essere valutati separatamente per ciascun componente del limite.\newline
+\textbf{Strategie per mostrare che il limite esiste}\newline
+1. Inserire i numeri, tutto a posto\newline
+2. Manipolazioni Algebriche\newline
+-fattorizzare\ dividere \newline
+-usa identità triangolari \newline
+3. Cambia in coord polari \newline
+se \:\:$ (x,y)\to(0,0)\Leftrightarrow r\to0$\newline
+\textbf{Strategie per mostrare che limite NE}\newline
+1. Mostra che il limite \`e  diverso se approssimato da percorsi diversi \newline
 (x=y, $x=y^2,$ etc.)\newline
-2. Switch to Polar coords and show the limit DNE.\newline
-\textbf{Continunity}\newline
-A fn, $z=f(x,y)$, is continuous at (a,b) if\newline
+2. Cambia in coord Polari e mostra che il limite NE.\newline
+\textbf{Continuit\`a}\newline
+Una fn, $z=f(x,y)$, \`e  continua in (a,b) se \newline
 $f(a,b) = \lim_{(x,y) \to (a,b)} f(x,y) $\newline
-Which means:\newline
-1. The limit exists\newline
-2. The fn value is defined\newline
-3. They are the same value
+Che significa:\newline
+1. Il limite esiste\newline
+2. La funzione \`e definita in quel valore\newline
+3. Essi hanno lo stesso valore
 
-\subsection{Directional Derivatives}
-Let z=f(x,y) be a fuction, (a,b) ap point in the domain (a valid input point) and $ \hat{u} $ a unit vector (2D).\newline
-The Directional Derivative is then the derivative at the point (a,b) in the direction of $ \hat{u} $ or:\newline
+\subsection{ Derivate Direzionali}
+Sia z=f(x,y) una funzione, (a,b) un punto nel  dominio (un valido  punto di input) e  $ \hat{u} $ un vettore unitario (2D).\newline
+La Derivata Direzionale \`e quindi la la derivata nel punto (a,b) con direzione di $ \hat{u} $ o:\newline
 $ D_{\vec{u}}f(a,b) = \hat{u} \cdot \nabla f(a,b)$\newline
-This will return a \textit{scalar}.
-4-D version: $ D_{\vec{u}}f(a,b,c) = \hat{u} \cdot \nabla f(a,b,c) $
+Ciò restituir\`a uno \textit{scalare}. \newline
+%4-D version: $ D_{\vec{u}}f(a,b,c) = \hat{u} \cdot \nabla f(a,b,c) $
 
-\subsection{Tangent Planes}
-let F(x,y,z) = k be a surface and P = $(x_0, y_0, z_0)$ be a point on that surface.\newline
-Equation of a Tangent Plane:\newline
+\subsection{Piani Tangenti}
+Sia F(x,y,z) = k una superfice e  P = $(x_0, y_0, z_0)$ un punto su questa superficie.\newline
+L'equazione del Piano Tangente \`e \newline
 $ \nabla F(x_0,y_0,z_0) \cdot <x-x_0, y-y_0, z-z_0> $
 
-\subsection {Approximations}
-let $ z=f(x,y) $ be a differentiable function
-total differential of f = dz\newline
+\subsection {Approssimazioni}
+Sia $ z=f(x,y)$ una funzione differenziabile differenziale totale di f = dz\newline
 $dz= \nabla f \cdot < dx, dy >$\newline
-This is the \textit{approximate} change in z\newline
-The actual change in z is the difference in z values:\newline
+Questa \`e la variazione \textit{approssimata} in z\newline
+Il cambiamento reale  in z \`e  la differenza nei valori di z:\newline
 $ \Delta z = z-z_1 $
 
-\subsection {Maxima and Minima}
-\textbf{Internal Points}\newline
-1. Take the Partial Derivatives with respect to X and Y ($ f_x $ and $ f_y $) (Can use gradient)\newline
-2. Set derivatives equal to 0 and use to solve system of equations for x and y\newline
-3. Plug back into original equation for z.\newline
-Use Second Derivative Test for whether points are local max, min, or saddle\newline
+\newpage
 
-\textbf{Second Partial Derivative Test}\newline
-1. Find all (x,y) points such that $ \nabla f(x,y) = \vec{0} $\newline
-2. Let $ D=f_{xx}(x,y)f_{yy}(x,y)-f_{xy}^2(x,y) $\newline
-IF (a) D $>$ 0 AND $ f_{xx} < 0, $ f(x,y) is local max value\newline
-(b) D $>$ 0 AND $f_{xx}(x,y) > 0$ f(x,y) is local min value\newline
-(c) D $<$ 0, (x,y,f(x,y)) is a saddle point\newline
-(d) D $=$ 0, test is inconclusive\newline
-3. Determine if any boundary point gives min or max. Typically, we have to parametrize boundary and then reduce to a Calc 1 type of min/max problem to solve.
+\subsection {Massimi e Minimi}
+$\bullet$ Trovare estremi relativi di funzioni definite su insiemi \underline{aperti}, derivabili ovunque \newline
+$\bullet$ Trovare estremi \underline{assoluti} di funzioni continue e derivabili ovunque, definite su insiemi chiusi e limitati. Si risolve in 3 passi:
+\begin{itemize}
+    \item[$a)$] cerco pt di max/min interni (via annullamento delle derivate prime)
+    \item[$b)$] cerco pt di max/min sulla frontiera (via sostituzione o ML)
+    \item[$c)$] calcolo il valore della funzione in tutti i pt trovati in a) e b). Fra questi pt ci sono certamente i pt di max e min assoluto, che $\exists$ per teor. Weierstrass 
+\end{itemize}
+$\bullet$ Trovare estremi relativi di funzione con vincolo
+\begin{itemize}
+\item[-] si risolve via sostituzione. I ML non bastano, danno condizioni solo necessarie
+\end{itemize}
 
-\textbf{The following only apply only if a boundary is given}\newline
-1. check the corner points\newline
-2. Check each line (0 $\le$ x $\le$ 5 would give x=0 and x=5 )\newline
-On Bounded Equations, this is the global min and max...second derivative test is not needed.
+\textbf{Risultati per punti interni}\newline
+- c. necess: derivate parziali nel pt siano nulle \newline
+\textbf{Utile su D aperto}\newline
+- c. suff: se $f(x,y)$ ammette derivate parziali prime e seconde continue in un intorno del pt e vale la c. necess., allora: \newline
+a) c. suff. per cui pt sia pt minimo relativo interno \`e che
+$\left\{\begin{matrix}
+f_{xx}(pt)>0\\ 
+|H(pt)|>0
+\end{matrix}\right.$
+\newline
+a') c. suff. per cui pt sia pt massimo relativo interno \`e che 
+$\left\{\begin{matrix}
+f_{xx}(pt)<0\\ 
+|H(pt)|>0
+\end{matrix}\right.$
+- non concludo nulla se $|H(pt)|\geq0$
+\newline
+- un pt NON \`e pt di ottimo se  $|H(pt)|<0$ \newline
+\newline
+\textbf{Max e min su frontiera del dominio} \newline
+min/max su $D \cap \{(x,y): g(x,y)=0\}$ \newline
+I)metodo di sostituzione: se riesco esplicito $g(x,y)=0$ risp x o y ottenendo problema di max/min in una var soltanto
+\newline
+II)metodo dei moltiplicatori di Lagrange: fornisce cond. necess. per punti di ottimo sul vincolo $g(x,y)$ vedi Moltiplicatori di Lagrange
+\newline
+\newline
+\textbf{Punti Interni}\newline
+1. Calcola le Derivate Parziali rispetto a x e y ($ f_x $ e $ f_y $) (Puoi usare il gradiente)\newline
+2. Poni le derivate uguali a 0 e risolvi il sistema di equazioni rispetto x e y\newline
+3. Inserisci nell'equazione originaria in z.\newline
+Usa Test delle Derivate Seconde per sapere se i punti sono massimi o minimi locali, o sella\newline
 
-\subsection{Lagrange Multipliers}
-Given a function f(x,y) with a constraint g(x,y), solve the following system of equations to find the max and min points on the constraint (NOTE: may need to also find internal points.):\newline
-$ \nabla f = \lambda \nabla g $\newline
-$ g(x,y) = 0 (or k if given) $
+\textbf{Test delle Derivate Seconde Parziali}\newline
+1. Trova tutti i punti (x,y) per cui $ \nabla f(x,y) = \vec{0} $\newline
+2. Sia $ D=f_{xx}(x,y)f_{yy}(x,y)-f_{xy}^2(x,y) $\newline
+SE (a) D $>$ 0 ET $ f_{xx} < 0, $ f(x,y) \`e massimo locale \newline
+(b) D $>$ 0 ET $f_{xx}(x,y) > 0$ f(x,y) \`e minimo locale \newline
+(c) D $<$ 0, (x,y,f(x,y)) \`e un punto di sella \newline
+(d) D $=$ 0, test  inconclusivo \newline
+3. Determina se ciascun punto sul confine fornisce un min o max. Tipicamente, dobbiamo parametrizzare il confine per  ridurlo ad un problema di min/max di Analisi 1.
 
-\subsection{Double Integrals}
-With Respect to the xy-axis, if taking an integral,\newline
-$ \int\int dy dx $ is cutting in vertical rectangles,\newline
-$ \int\int dx dy $ is cutting in horizontal rectangles\newline
+\textbf{Quanto segue si applica solo se viene fornito un confine}\newline
+1. Controlla  i punti d'angolo \newline
+2. Controlla  ciascuna linea  (0 $\le$ x $\le$ 5 darebbe x=0 e x=5 )\newline
+Sulle Equazioni Limitate, questo \`e il massimo/ minimo globale ... il test delle derivate seconde non \`e necessario.
 
-\textbf{Polar Coordinates}\newline
-When using polar coordinates, $ dA = r dr  d\theta $
+\subsection{Moltiplicatori di Lagrange}
+Data una funzione f(x,y) con il vincolo g(x,y), risolvi il seguente sistema di equazioni per trovare i punti di massimo e di minimo sul vincolo (NOTA: potrebbe essere necessario trovare anche punti interni):\\
 
-\subsection{Surface Area of a Curve}
-let z = f(x,y) be continuous over S (a closed Region in 2D domain)\newline
-Then the surface area of z = f(x,y) over S is:\newline
-$ SA = \int\int_S\sqrt{f_x^2+f_y^2+1} dA $
+$\left\{\begin{matrix}
+ \nabla f = \lambda \nabla g  \\ 
+ g(x,y) = 0 &(\mathrm{o }\, k \, \mathrm{se}\, {\`e}\,  \mathrm{dato})  
+\end{matrix}\right.$\newline
+Aggiungi eventuali pt singolari di $g(x,y)$ per cui $g(x,y)=0$ \newline
+\newline
+\textbf{Teor risparmia tempo su ML} \newline
+Se $f(x,y)=h(r(x,y))$, con $u=r(x,y)$ e se $h'(u)>0$, allora i pt di massimo della $f(x,y)$ sono gli stessi di quelli della $g(x,y)$. Lo stesso per i pt di minimo.
 
-\subsection {Triple Integrals}
+\subsection{Integrali Doppi}
+Rispetto all'asse xy, se prendiamo un integrale,\newline
+$ \int\int dy dx $ sta tagliando in rettangoli verticali,\newline
+$ \int\int dx dy $ sta tagliando in rettangoli orizzontali \newline
+
+\textbf{Coordinate Polari}\newline
+Quando usiamo coordinate polari, $ dA = r dr  d\theta $
+
+\subsection{Area di superficie di una curva}
+Sia z = f(x,y) continua su S (a regione chiusa in dominio 2D)\newline
+L'area di superficie della z = f(x,y) su S \`e:\newline
+$ SA = \int\int_S\sqrt{f_x^2+f_y^2+1}\, dA $
+
+\subsection {Integrali Tripli}
 $ \int\int\int_s f(x,y,z)dv = \int_{a_1}^{a_2}\int_{\phi_1(x)}^{\phi_2(x)}\int_{\psi_1(x,y)}^{\psi_2(x,y)} f(x,y,z)dzdydx $\newline
-Note: $ dv $ can be exchanged for $ dxdydz $ in any order, but you must then choose your limits of integration according to that order
+Nota: $ dv $ pu\`o essere  scambiato in $ dxdydz $ in qualsiasi ordine, tuttavia bisogna scegliere i limiti di integrazione rispettando l'ordine scelto
 
-\subsection {Jacobian Method}
+\subsection {Metodo Jacobiano}
 $ \int\int_Gf(g(u,v),h(u,v)) | J(u,v) | du dv = \int\int_R f(x,y) dx dy $\newline
 \[
 J(u,v) = 
@@ -421,21 +434,21 @@ J(u,v) =
 \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
 \end{vmatrix}
 \]\newline
-Common Jacobians:\newline
-Rect. to Cylindrical: $r$\newline
-Rect. to Spherical: $\rho^2 \sin(\phi)$
+%Jacobiani Comuni:\newline
+%Rect. to Cylindrical: $r$\newline
+%Rect. to Spherical: $\rho^2 \sin(\phi)$
 
-\subsection {Vector Fields}
+%\subsection {Vector Fields}
 %note, this one should be moved around so that it is on the last column...it's kinda big.
-let $ f(x,y,z) $ be a scalar field and $ \vec{F}(x,y,z) = M(x,y,z)\hat{i} + N(x,y,z)\hat{j} + P(x,y,z)\hat{k} $ be a vector field,\newline
-Grandient of f = $ \nabla f = < \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} >$\newline
-Divergence of $ \vec{F}$:\newline $ \nabla\cdot\vec{F} = \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y} + \frac{\partial P}{\partial z} $\newline
-Curl of $ \vec{F}$:\newline $ \nabla\times\vec{F} = 
-\begin{vmatrix}
-\hat{i} & \hat{j} & \hat{k} & \\
-\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
-M & N & P
-\end{vmatrix} $
+%let $ f(x,y,z) $ be a scalar field and $ \vec{F}(x,y,z) = M(x,y,z)\hat{i} + N(x,y,z)\hat{j} + P(x,y,z)\hat{k} $ be a vector field,\newline
+%Grandient of f = $ \nabla f = < \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} >$\newline
+%Divergence of $ \vec{F}$:\newline $ \nabla\cdot\vec{F} = \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y} + \frac{\partial P}{\partial z} $\newline
+%Curl of $ \vec{F}$:\newline $ \nabla\times\vec{F} = 
+%\begin{vmatrix}
+%\hat{i} & \hat{j} & \hat{k} & \\
+%\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & %\frac{\partial}{\partial z} \\
+%M & N & P
+%\end{vmatrix} $
 
 \subsection{Line Integrals}
 C given by $x = x(t), y = y(t), t\in [a,b]$\newline 
@@ -486,7 +499,8 @@ $ \Leftrightarrow \oint Mdx + Ndy = \int\int_R (N_x-M_y) dxdy $\newline
 \textbf{Area of R}\newline
 $ A = \oint(\frac{-1}{2}y dx + \frac{1}{2}x dy) $
 
-\subsection{Gauss' Divergence Thm}
+\begin{comment}
+ \subsection{Gauss' Divergence Thm}
 (3D Analog of Green's Theorem - Use for Flux over a 3D surface)
 Let:\newline
 $ \cdot\vec{F}(x,y,z) $ be vector field continuously differentiable in solid S\newline
@@ -496,8 +510,30 @@ $ \cdot\hat{n} $unit outer normal to $ \partial S $\newline
 Then,\newline
 $ \int\int_{\partial S}\vec{F}(x,y,z)\cdot\hat{n}dS = \int\int\int_S\nabla\cdot\vec{F} dV $\newline
 (dV = dxdydz)
+\end{comment}
 
-\vfill\columnbreak
+% prova a caso
+\subsection{prova a caso}
+C given by $x = x(t), y = y(t), t\in [a,b]$\newline 
+$ \int_cf(x,y)ds = \int_a^bf(x(t), y(t)) ds $\newline
+where $ ds = \sqrt{(\frac{dx}{dt})^2+(\frac{dy}{dt})^2} dt $\newline
+or $ \sqrt{1+(\frac{dy}{dx})^2} dx $\newline
+or $ \sqrt{1+(\frac{dx}{dy})^2} dy $\newline
+To evaluate a Line Integral,\newline
+$\cdot$ get a paramaterized version of the line 
+ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole 
+parole ultime parole ultime parole ultime parole 
+ ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime  ultime parole ultime parole ultime parole ultime parole 
+%fine prova a caso1
+
+\vfill
+\subsection{Circonferenza unitaria}
+(cos, sin)\newline
+\includegraphics[scale=0.64]{unit_circle}
+\newline\newline\newline\newline
+\vfill
+\columnbreak
+
 
 \subsection{Surface Integrals}
 Let\newline
@@ -514,14 +550,10 @@ $\cdot\vec{F}(x,y,z) = M(x,y,z)\hat{i} + N(x,y,z)\hat{j} + P(x,y,z)\hat{k} $\new
 $\cdot$G is surface f(x,y)=z\newline
 $\cdot\vec{n}$ is upward unit normal on G.\newline
 $\cdot$f(x,y) has continuous $1^{st}$ order partial derivatives
-\vfill
-\subsection{Unit Circle}
-(cos, sin)\newline
-\includegraphics[scale=0.64]{unit_circle}
-\newline\newline\newline\newline
-\vfill
-\columnbreak
-\subsection {Other Information}
+ ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime  ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime parole ultime 
+
+\begin{comment}
+ \subsection {Other Information}
 $ \frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}} $\newline
 Where a Cone is defined as $ z = \sqrt{a(x^2+y^2)}, $\newline
 In Spherical Coordinates, $ \phi = \cos^{-1}(\sqrt{\frac{a}{1+a}}) $\newline
@@ -542,9 +574,10 @@ Then,\newline
 $ \oint\vec{F}_c\cdot\hat{T}dS = \int\int_s (\nabla\times\vec{F})\cdot\hat{n} dS = \int\int_R(\nabla\times\vec{F})\cdot\vec{n}dxdy $\newline
 Remember:\newline
 $ \oint\vec{F}\cdot\vec{T}ds = \int_c (Mdx + Ndy + Pdz) $
+\end{comment}
 
 %The following can go away as needed, it is here so I can put my Accreditation message/source code message at the bottom right.
 \vfill
-{\fontsize{.5}{1}\selectfont Originally Written By Daniel Kenner for MATH 2210 at the University of Utah.\newline Source code available at https://github.com/keytotime/Calc3\_CheatSheet\newline Thanks to Kelly Macarthur for Teaching and Providing Notes.}
+{\fontsize{.5}{1}\selectfont Originally Written By Daniel Kenner for MATH 2210 at the University of Utah.\newline Source code available at https://github.com/keytotime/Calc3\_CheatSheet\newline Later modified and customized by Luca Buratto} 
 \end{multicols*}
 \end{document}
