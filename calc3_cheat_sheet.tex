@@ -154,7 +154,7 @@ $ \sin^2(x)+\cos^2(x) = 1 $\newline
 $ 1+\tan^2(x) = \sec^2(x) $\newline
 $ 1+\cot^2(x) = \csc^2(x) $\newline
 $ \sin(x\pm y) = \sin(x)\cos(y)\pm\cos(x)\sin(y) $\newline
-$ \cos(x\pm y) = \cos(x)\cos(y)\pm\sin(x)\sin(y) $\newline
+$ \cos(x\pm y) = \cos(x)\cos(y)\mp\sin(x)\sin(y) $\newline
 $ \tan(x\pm y) = \frac{\tan(x)\pm\tan(y)}{1 \mp \tan(x)\tan(y)} $\newline
 $ \sin(2x) = 2\sin(x)\cos(x) $\newline
 $ \cos(2x) = \cos^{2}(x) - \sin^{2}(x) $\newline
@@ -190,8 +190,8 @@ Unit Vector: $ \hat{u} = \frac{\vec{u}}{||\vec{u}||} $\newline
 $ \vec{u} \cdot \vec{v} $\newline
 Produces a Scalar \newline
 (Geometrically, the dot product is a vector projection)\newline
-$\vec{u} = < u_1, u_2, u_3 >$\newline
-$\vec{v} = < v_1, v_2, v_3 >$\newline
+$\vec{u} = \langle u_1, u_2, u_3 \rangle$\newline
+$\vec{v} = \langle v_1, v_2, v_3 \rangle$\newline
 $ \vec{u} \cdot \vec{v} = \vec{0} $ means the two vectors are Perpendicular
 $ \theta $ is the angle between them.\newline
 $\vec{u} \cdot \vec{v} = ||\vec{u}||\:||\vec{v}||\cos(\theta) $\newline
@@ -209,8 +209,8 @@ $ pr_{\vec{v}}\vec{u} = (\frac{\vec{u} \cdot \vec{v}}{||\vec{v}||^2})\vec{v} $\n
 $\vec{u} \times \vec{v}$\newline
 Produces a Vector\newline
 (Geometrically, the cross product is the area of a paralellogram with sides $ ||\vec{u}|| $ and $ ||\vec{v}|| $)\newline
-$\vec{u} = < u_1, u_2, u_3 >$\newline
-$\vec{v} = < v_1, v_2, v_3 >$\newline
+$\vec{u} = \langle u_1, u_2, u_3 \rangle$\newline
+$\vec{v} = \langle v_1, v_2, v_3 \rangle$\newline
 \[
 \vec{u} \times \vec{v} = 
 \begin{vmatrix}
@@ -223,14 +223,14 @@ $ \vec{u} \times \vec{v} = \vec{0} $ means the vectors are paralell
 
 \subsection {Lines and Planes}
 \textbf{Equation of a Plane}\newline
-$ (x_0, y_0, z_0) $ is a point on the plane and $ <A,B,C> $ is a normal vector\newline
+$ (x_0, y_0, z_0) $ is a point on the plane and $ \langle A,B,C \rangle$ is a normal vector\newline
 
 $A(x-x_0)+B(y-y_0)+C(z-z_0) = 0$\newline
-$ <A,B,C> \cdot <x-x_0, y-y_0, z-z_0> = 0 $\newline
+$ \langle A,B,C \rangle \cdot \langle x-x_0, y-y_0, z-z_0 \rangle = 0 $\newline
 $ Ax+By+Cz = D $ where $ D=Ax_0+By_0+Cz_0 $\newline
 
 \textbf{Equation of a line}\newline
-A line requires a Direction Vector $ \vec{u}=<u_1,u_2,u_3> $ and a point $(x_1,y_1,z_1)$\newline
+A line requires a Direction Vector $ \vec{u}=\langle u_1,u_2,u_3 \rangle$ and a point $(x_1,y_1,z_1)$\newline
 then,\newline a parameterization of a line could be:\newline
 $ x = u_1t+x_1 $\newline
 $ y = u_2t+y_1 $\newline
@@ -309,8 +309,8 @@ $f_{xyy} = \frac{\partial^3 f}{\partial^2 y \partial x}, $\newline
 For $\frac{\partial^3 f}{\partial^2 y\partial x}$ , work right to left in the denominator
 
 \subsection {Gradients}
-The Gradient of a function in 2 variables is $ \nabla f = < f_x, f_y > $\newline
-The Gradient of a function in 3 variables is $ \nabla f = < f_x, f_y, f_z > $
+The Gradient of a function in 2 variables is $ \nabla f = \langle f_x, f_y \rangle $\newline
+The Gradient of a function in 3 variables is $ \nabla f = \langle f_x, f_y, f_z \rangle $
 
 \subsection {Chain Rule(s)}
 
@@ -359,12 +359,12 @@ This will return a \textit{scalar}.
 \subsection{Tangent Planes}
 let F(x,y,z) = k be a surface and P = $(x_0, y_0, z_0)$ be a point on that surface.\newline
 Equation of a Tangent Plane:\newline
-$ \nabla F(x_0,y_0,z_0) \cdot <x-x_0, y-y_0, z-z_0> $
+$ \nabla F(x_0,y_0,z_0) \cdot \langle x-x_0, y-y_0, z-z_0 \rangle $
 
 \subsection {Approximations}
 let $ z=f(x,y) $ be a differentiable function
 total differential of f = dz\newline
-$dz= \nabla f \cdot < dx, dy >$\newline
+$dz= \nabla f \cdot \langle dx, dy \rangle$\newline
 This is the \textit{approximate} change in z\newline
 The actual change in z is the difference in z values:\newline
 $ \Delta z = z-z_1 $
@@ -397,8 +397,8 @@ $ g(x,y) = 0 (or k if given) $
 
 \subsection{Double Integrals}
 With Respect to the xy-axis, if taking an integral,\newline
-$ \int\int dy dx $ is cutting in vertical rectangles,\newline
-$ \int\int dx dy $ is cutting in horizontal rectangles\newline
+$ \iint dy dx $ is cutting in vertical rectangles,\newline
+$ \iint dx dy $ is cutting in horizontal rectangles\newline
 
 \textbf{Polar Coordinates}\newline
 When using polar coordinates, $ dA = r dr  d\theta $
@@ -406,14 +406,14 @@ When using polar coordinates, $ dA = r dr  d\theta $
 \subsection{Surface Area of a Curve}
 let z = f(x,y) be continuous over S (a closed Region in 2D domain)\newline
 Then the surface area of z = f(x,y) over S is:\newline
-$ SA = \int\int_S\sqrt{f_x^2+f_y^2+1} dA $
+$ SA = \iint_S\sqrt{f_x^2+f_y^2+1} dA $
 
 \subsection {Triple Integrals}
-$ \int\int\int_s f(x,y,z)dv = \int_{a_1}^{a_2}\int_{\phi_1(x)}^{\phi_2(x)}\int_{\psi_1(x,y)}^{\psi_2(x,y)} f(x,y,z)dzdydx $\newline
+$ \iiint_s f(x,y,z)dv = \int_{a_1}^{a_2}\int_{\phi_1(x)}^{\phi_2(x)}\int_{\psi_1(x,y)}^{\psi_2(x,y)} f(x,y,z)dzdydx $\newline
 Note: $ dv $ can be exchanged for $ dxdydz $ in any order, but you must then choose your limits of integration according to that order
 
 \subsection {Jacobian Method}
-$ \int\int_Gf(g(u,v),h(u,v)) | J(u,v) | du dv = \int\int_R f(x,y) dx dy $\newline
+$ \iint_Gf(g(u,v),h(u,v)) | J(u,v) | du dv = \iint_R f(x,y) dx dy $\newline
 \[
 J(u,v) = 
 \begin{vmatrix}
@@ -428,7 +428,7 @@ Rect. to Spherical: $\rho^2 \sin(\phi)$
 \subsection {Vector Fields}
 %note, this one should be moved around so that it is on the last column...it's kinda big.
 let $ f(x,y,z) $ be a scalar field and $ \vec{F}(x,y,z) = M(x,y,z)\hat{i} + N(x,y,z)\hat{j} + P(x,y,z)\hat{k} $ be a vector field,\newline
-Grandient of f = $ \nabla f = < \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} >$\newline
+Gradient of f = $ \nabla f = \langle \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \rangle$\newline
 Divergence of $ \vec{F}$:\newline $ \nabla\cdot\vec{F} = \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y} + \frac{\partial P}{\partial z} $\newline
 Curl of $ \vec{F}$:\newline $ \nabla\times\vec{F} = 
 \begin{vmatrix}
@@ -470,19 +470,19 @@ $ \vec{F} $ conservative $ \Leftrightarrow \nabla\times\vec{F} = \vec{0} $ \newl
 
 \subsection{Green's Theorem}
 (method of changing line integral for double integral - Use for Flux and Circulation across 2D curve and line integrals over a closed boundary)\newline
-$ \oint Mdy - Ndx = \int\int_R(M_x+N_y)dxdy $\newline
-$ \oint Mdx + Ndy = \int\int_R (N_x-M_y) dxdy $\newline
+$ \oint Mdy - Ndx = \iint_R(M_x+N_y)dxdy $\newline
+$ \oint Mdx + Ndy = \iint_R (N_x-M_y) dxdy $\newline
 Let:\newline
 $\cdot$R be a region in xy-plane\newline
 $\cdot$C is simple, closed curve enclosing R (w/ paramerization $ \vec{r}(t) $)\newline
 $ \cdot\vec{F}(x,y) = M(x,y)\hat{i} + N(x,y)\hat{j} $ be continuously differentiable over R$\cup$C. \newline
 \textbf{Form 1: Flux Across Boundary}\newline
 $ \vec{n} = $ unit normal vector to C\newline
-$ \oint_c \vec{F}\cdot\vec{n} = \int\int_R \nabla\cdot\vec{F} dA $\newline
-$ \Leftrightarrow\oint Mdy - Ndx = \int\int_R(M_x+N_y)dxdy $\newline
+$ \oint_c \vec{F}\cdot\vec{n} dr = \iint_R \nabla\cdot\vec{F} dA $\newline
+$ \Leftrightarrow\oint Mdy - Ndx = \iint_R(M_x+N_y)dxdy $\newline
 \textbf{Form 2: Circulation Along Boundary}\newline
-$ \oint_c\vec{F}\cdot d\vec{r} = \int\int_R \nabla\times\vec{F}\cdot\hat{u} dA $\newline
-$ \Leftrightarrow \oint Mdx + Ndy = \int\int_R (N_x-M_y) dxdy $\newline
+$ \oint_c\vec{F}\cdot d\vec{r} = \iint_R \left(\nabla\times\vec{F}\right) \cdot\hat{u} dA $\newline
+$ \Leftrightarrow \oint Mdx + Ndy = \iint_R (N_x-M_y) dxdy $\newline
 \textbf{Area of R}\newline
 $ A = \oint(\frac{-1}{2}y dx + \frac{1}{2}x dy) $
 
@@ -494,7 +494,7 @@ $ \cdot $S is a 3D solid
 $ \cdot\partial S $ boundary of S (A Surface)\newline
 $ \cdot\hat{n} $unit outer normal to $ \partial S $\newline
 Then,\newline
-$ \int\int_{\partial S}\vec{F}(x,y,z)\cdot\hat{n}dS = \int\int\int_S\nabla\cdot\vec{F} dV $\newline
+$ \iint_{\partial S}\vec{F}(x,y,z)\cdot\hat{n}dS = \iiint_S\nabla\cdot\vec{F} dV $\newline
 (dV = dxdydz)
 
 \vfill\columnbreak
@@ -505,10 +505,10 @@ $\cdot$R be closed, bounded region in xy-plane\newline
 $\cdot$f be a fn with first order partial derivatives on R\newline
 $\cdot$G be a surface over R given by $ z=f(x,y) $\newline
 $\cdot g(x,y,z) = g(x,y,f(x,y))$ is cont. on R\newline
-Then,\newline$ \int\int_G g(x,y,z) dS = \int\int_R g(x,y,f(x,y)) dS $\newline
+Then,\newline$ \iint_G g(x,y,z) dS = \iint_R g(x,y,f(x,y)) dS $\newline
 where $ dS = \sqrt{f_x^2+f_y^2+1}dydx $\newline
 \textbf{Flux of $ \vec{F} $ across G}\newline
-$ \int\int_G\vec{F}\cdot{n} dS = \int\int_R[-Mf_x-Nf_y+P]dxdy $\newline
+$ \iint_G\vec{F}\cdot{n} dS = \iint_R[-Mf_x-Nf_y+P]dxdy $\newline
 where:\newline
 $\cdot\vec{F}(x,y,z) = M(x,y,z)\hat{i} + N(x,y,z)\hat{j} + P(x,y,z)\hat{k} $\newline
 $\cdot$G is surface f(x,y)=z\newline
@@ -526,8 +526,8 @@ $ \frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}} $\newline
 Where a Cone is defined as $ z = \sqrt{a(x^2+y^2)}, $\newline
 In Spherical Coordinates, $ \phi = \cos^{-1}(\sqrt{\frac{a}{1+a}}) $\newline
 Right Circular Cylinder:\newline
-$ V=\pi r^2h, SA=\pi r^2+2\pi rh $\newline
-$ \lim_{n\to \inf} (1+\frac{m}{n})^{pn} = e^{mp} $\newline
+$ V=\pi r^2h,\, SA=2\pi r^2+2\pi rh $\newline
+$ \lim_{n\to \infty} (1+\frac{m}{n})^{pn} = e^{mp} $\newline
 Law of Cosines:\newline
 $ a^2 = b^2 + c^2 - 2bc(\cos(\theta)) $
 
@@ -539,7 +539,7 @@ $\cdot$M,N,P have continuous $1^{st}$ order partial derivatives\newline
 $\cdot$C is piece-wise smooth, simple, closed, curve, positively oriented\newline
 $\cdot\hat{T}$ is unit tangent vector to C.\newline
 Then,\newline
-$ \oint\vec{F}_c\cdot\hat{T}dS = \int\int_s (\nabla\times\vec{F})\cdot\hat{n} dS = \int\int_R(\nabla\times\vec{F})\cdot\vec{n}dxdy $\newline
+$ \oint\vec{F}_c\cdot\hat{T}dS = \iint_s (\nabla\times\vec{F})\cdot\hat{n} dS = \iint_R(\nabla\times\vec{F})\cdot\vec{n}dxdy $\newline
 Remember:\newline
 $ \oint\vec{F}\cdot\vec{T}ds = \int_c (Mdx + Ndy + Pdz) $
 
