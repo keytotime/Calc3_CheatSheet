@@ -154,7 +154,7 @@ $ \sin^2(x)+\cos^2(x) = 1 $\newline
 $ 1+\tan^2(x) = \sec^2(x) $\newline
 $ 1+\cot^2(x) = \csc^2(x) $\newline
 $ \sin(x\pm y) = \sin(x)\cos(y)\pm\cos(x)\sin(y) $\newline
-$ \cos(x\pm y) = \cos(x)\cos(y)\pm\sin(x)\sin(y) $\newline
+$ \cos(x\pm y) = \cos(x)\cos(y)\mp\sin(x)\sin(y) $\newline
 $ \tan(x\pm y) = \frac{\tan(x)\pm\tan(y)}{1 \mp \tan(x)\tan(y)} $\newline
 $ \sin(2x) = 2\sin(x)\cos(x) $\newline
 $ \cos(2x) = \cos^{2}(x) - \sin^{2}(x) $\newline
@@ -478,10 +478,10 @@ $\cdot$C is simple, closed curve enclosing R (w/ paramerization $ \vec{r}(t) $)\
 $ \cdot\vec{F}(x,y) = M(x,y)\hat{i} + N(x,y)\hat{j} $ be continuously differentiable over R$\cup$C. \newline
 \textbf{Form 1: Flux Across Boundary}\newline
 $ \vec{n} = $ unit normal vector to C\newline
-$ \oint_c \vec{F}\cdot\vec{n} = \iint_R \nabla\cdot\vec{F} dA $\newline
+$ \oint_c \vec{F}\cdot\vec{n} dr = \iint_R \nabla\cdot\vec{F} dA $\newline
 $ \Leftrightarrow\oint Mdy - Ndx = \iint_R(M_x+N_y)dxdy $\newline
 \textbf{Form 2: Circulation Along Boundary}\newline
-$ \oint_c\vec{F}\cdot d\vec{r} = \iint_R \nabla\times\vec{F}\cdot\hat{u} dA $\newline
+$ \oint_c\vec{F}\cdot d\vec{r} = \iint_R \left(\nabla\times\vec{F}\right) \cdot\hat{u} dA $\newline
 $ \Leftrightarrow \oint Mdx + Ndy = \iint_R (N_x-M_y) dxdy $\newline
 \textbf{Area of R}\newline
 $ A = \oint(\frac{-1}{2}y dx + \frac{1}{2}x dy) $
@@ -526,7 +526,7 @@ $ \frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}} $\newline
 Where a Cone is defined as $ z = \sqrt{a(x^2+y^2)}, $\newline
 In Spherical Coordinates, $ \phi = \cos^{-1}(\sqrt{\frac{a}{1+a}}) $\newline
 Right Circular Cylinder:\newline
-$ V=\pi r^2h, SA=\pi r^2+2\pi rh $\newline
+$ V=\pi r^2h,\, SA=2\pi r^2+2\pi rh $\newline
 $ \lim_{n\to \inf} (1+\frac{m}{n})^{pn} = e^{mp} $\newline
 Law of Cosines:\newline
 $ a^2 = b^2 + c^2 - 2bc(\cos(\theta)) $
