@@ -190,8 +190,8 @@ Unit Vector: $ \hat{u} = \frac{\vec{u}}{||\vec{u}||} $\newline
 $ \vec{u} \cdot \vec{v} $\newline
 Produces a Scalar \newline
 (Geometrically, the dot product is a vector projection)\newline
-$\vec{u} = < u_1, u_2, u_3 >$\newline
-$\vec{v} = < v_1, v_2, v_3 >$\newline
+$\vec{u} = \langle u_1, u_2, u_3 \rangle$\newline
+$\vec{v} = \langle v_1, v_2, v_3 \rangle$\newline
 $ \vec{u} \cdot \vec{v} = \vec{0} $ means the two vectors are Perpendicular
 $ \theta $ is the angle between them.\newline
 $\vec{u} \cdot \vec{v} = ||\vec{u}||\:||\vec{v}||\cos(\theta) $\newline
@@ -209,8 +209,8 @@ $ pr_{\vec{v}}\vec{u} = (\frac{\vec{u} \cdot \vec{v}}{||\vec{v}||^2})\vec{v} $\n
 $\vec{u} \times \vec{v}$\newline
 Produces a Vector\newline
 (Geometrically, the cross product is the area of a paralellogram with sides $ ||\vec{u}|| $ and $ ||\vec{v}|| $)\newline
-$\vec{u} = < u_1, u_2, u_3 >$\newline
-$\vec{v} = < v_1, v_2, v_3 >$\newline
+$\vec{u} = \langle u_1, u_2, u_3 \rangle$\newline
+$\vec{v} = \langle v_1, v_2, v_3 \rangle$\newline
 \[
 \vec{u} \times \vec{v} = 
 \begin{vmatrix}
@@ -223,14 +223,14 @@ $ \vec{u} \times \vec{v} = \vec{0} $ means the vectors are paralell
 
 \subsection {Lines and Planes}
 \textbf{Equation of a Plane}\newline
-$ (x_0, y_0, z_0) $ is a point on the plane and $ <A,B,C> $ is a normal vector\newline
+$ (x_0, y_0, z_0) $ is a point on the plane and $ \langle A,B,C \rangle$ is a normal vector\newline
 
 $A(x-x_0)+B(y-y_0)+C(z-z_0) = 0$\newline
-$ <A,B,C> \cdot <x-x_0, y-y_0, z-z_0> = 0 $\newline
+$ \langle A,B,C \rangle \cdot \langle x-x_0, y-y_0, z-z_0 \rangle = 0 $\newline
 $ Ax+By+Cz = D $ where $ D=Ax_0+By_0+Cz_0 $\newline
 
 \textbf{Equation of a line}\newline
-A line requires a Direction Vector $ \vec{u}=<u_1,u_2,u_3> $ and a point $(x_1,y_1,z_1)$\newline
+A line requires a Direction Vector $ \vec{u}=\langle u_1,u_2,u_3 \rangle$ and a point $(x_1,y_1,z_1)$\newline
 then,\newline a parameterization of a line could be:\newline
 $ x = u_1t+x_1 $\newline
 $ y = u_2t+y_1 $\newline
@@ -309,8 +309,8 @@ $f_{xyy} = \frac{\partial^3 f}{\partial^2 y \partial x}, $\newline
 For $\frac{\partial^3 f}{\partial^2 y\partial x}$ , work right to left in the denominator
 
 \subsection {Gradients}
-The Gradient of a function in 2 variables is $ \nabla f = < f_x, f_y > $\newline
-The Gradient of a function in 3 variables is $ \nabla f = < f_x, f_y, f_z > $
+The Gradient of a function in 2 variables is $ \nabla f = \langle f_x, f_y \rangle $\newline
+The Gradient of a function in 3 variables is $ \nabla f = \langle f_x, f_y, f_z \rangle $
 
 \subsection {Chain Rule(s)}
 
@@ -359,12 +359,12 @@ This will return a \textit{scalar}.
 \subsection{Tangent Planes}
 let F(x,y,z) = k be a surface and P = $(x_0, y_0, z_0)$ be a point on that surface.\newline
 Equation of a Tangent Plane:\newline
-$ \nabla F(x_0,y_0,z_0) \cdot <x-x_0, y-y_0, z-z_0> $
+$ \nabla F(x_0,y_0,z_0) \cdot \langle x-x_0, y-y_0, z-z_0 \rangle $
 
 \subsection {Approximations}
 let $ z=f(x,y) $ be a differentiable function
 total differential of f = dz\newline
-$dz= \nabla f \cdot < dx, dy >$\newline
+$dz= \nabla f \cdot \langle dx, dy \rangle$\newline
 This is the \textit{approximate} change in z\newline
 The actual change in z is the difference in z values:\newline
 $ \Delta z = z-z_1 $
@@ -428,7 +428,7 @@ Rect. to Spherical: $\rho^2 \sin(\phi)$
 \subsection {Vector Fields}
 %note, this one should be moved around so that it is on the last column...it's kinda big.
 let $ f(x,y,z) $ be a scalar field and $ \vec{F}(x,y,z) = M(x,y,z)\hat{i} + N(x,y,z)\hat{j} + P(x,y,z)\hat{k} $ be a vector field,\newline
-Grandient of f = $ \nabla f = < \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} >$\newline
+Grandient of f = $ \nabla f = \langle \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \rangle$\newline
 Divergence of $ \vec{F}$:\newline $ \nabla\cdot\vec{F} = \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y} + \frac{\partial P}{\partial z} $\newline
 Curl of $ \vec{F}$:\newline $ \nabla\times\vec{F} = 
 \begin{vmatrix}
